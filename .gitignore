@@ -1,0 +1,7 @@
+processing_result.png
+processed/
+visualizations/
+data/
+__pycache__/
+*.pyc
+.env
