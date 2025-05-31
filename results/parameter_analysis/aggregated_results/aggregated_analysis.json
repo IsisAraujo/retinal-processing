@@ -1,0 +1,2720 @@
+{
+  "images": [
+    "03_g",
+    "01_h",
+    "15_dr",
+    "12_g"
+  ],
+  "all_results": [
+    {
+      "image_id": "03_g",
+      "clip_limit": 1.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.8049743885056266,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 1.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.851507952057141,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 1.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.9648895500072772,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 1.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.0141068140647977,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 1.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.9846782334985085,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 1.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.0783297582441738,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 1.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.2754959352188826,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 1.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.413078704432067,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 1.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.5857771102231677,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 1.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.5835570143963458,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 1.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.598158711591811,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 1.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.7457472396350657,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 2.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.6247063113802467,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 2.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.8735166850097564,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 2.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.12588156730234,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 2.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.106900028276429,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 2.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.146587928861554,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 2.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.375425097693625,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 2.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.113711690214198,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 2.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.406567987776463,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 2.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.7099933172789985,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 2.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.631522586677459,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 2.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.781847845563582,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 2.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.999316957248387,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 3.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.5521689606868008,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 3.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.8896205264808144,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 3.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 4.182313824699278,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 3.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 4.078720673366725,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 3.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 4.414123275658914,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 3.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 4.567959283572052,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 3.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 4.032334969695791,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 3.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 4.545411538785018,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 3.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 4.786108722904065,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 3.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 4.6135897635973,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 3.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 5.126367534856794,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 3.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 5.214758882343233,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 4.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 4.51609690655899,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 4.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 5.004016588154458,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 4.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 5.29058490295745,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 4.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 5.126652335126597,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 4.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 5.690151807049504,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 4.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 5.761422890628371,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 4.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 5.032226869425965,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 4.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 5.587828866598506,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 4.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 5.890939489626325,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 4.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 5.5811121684811384,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 4.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 6.385212913895121,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 4.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 6.5611227399377965,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 5.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 5.537781723744971,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 5.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 6.13331643369292,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 5.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 6.262715652736939,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 5.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 6.0079445063357735,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 5.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 6.986159312131337,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "03_g",
+      "clip_limit": 5.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 7.176139851354673,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 1.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4809017050938909,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 1.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.47449538689489,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 1.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.799765583638963,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.44538933489564,
+      "confidence_score": 0.9976558363896298,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 1.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7994721894866561,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4760287319412964,
+      "confidence_score": 0.9947218948665609,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 1.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7990193642835015,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4216808002725438,
+      "confidence_score": 0.9901936428350145,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 1.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7984985112096827,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4043473573606244,
+      "confidence_score": 0.9849851120968276,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 1.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7958863877833726,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4499738521899166,
+      "confidence_score": 0.9588638778337255,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 1.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7953283736774635,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4672247587859986,
+      "confidence_score": 0.953283736774634,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 1.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7949675496431223,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4514986365008997,
+      "confidence_score": 0.9496754964312235,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 1.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7947549200860227,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4021420079932216,
+      "confidence_score": 0.9475492008602261,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 1.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7942617323903187,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3883575990175954,
+      "confidence_score": 0.942617323903186,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 1.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7933259744720638,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3739306245264504,
+      "confidence_score": 0.9332597447206381,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 2.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7921648636320022,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.448904993686272,
+      "confidence_score": 0.9216486363200223,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 2.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7921534209914167,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.401267645370406,
+      "confidence_score": 0.921534209914167,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 2.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7915208293746427,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4120043130952302,
+      "confidence_score": 0.9152082937464265,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 2.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7913609800303114,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3562209857868106,
+      "confidence_score": 0.9136098003031143,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 2.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7909532573219225,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3548422966691582,
+      "confidence_score": 0.9095325732192246,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 2.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7900673139225372,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4480944311857638,
+      "confidence_score": 0.900673139225371,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 2.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7898866556159894,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.398181933892054,
+      "confidence_score": 0.8988665561598935,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 2.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7893653585339302,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3356986252233964,
+      "confidence_score": 0.8936535853393014,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 2.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7891679150886293,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4128709985832901,
+      "confidence_score": 0.8916791508862921,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 2.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7891167046191732,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3411574017798549,
+      "confidence_score": 0.8911670461917316,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 2.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.788555698607907,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3304468270991774,
+      "confidence_score": 0.885556986079069,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 3.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7881383038698082,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.38332224325494,
+      "confidence_score": 0.8813830386980828,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 3.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7879220023300955,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3835884589970766,
+      "confidence_score": 0.8792200233009552,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 3.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7874418009439199,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.417402498980805,
+      "confidence_score": 0.8744180094391986,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 3.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7872891779152602,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4604559387250997,
+      "confidence_score": 0.8728917791526013,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 3.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7872258397450358,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3088198959522812,
+      "confidence_score": 0.8722583974503577,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 3.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7869767672471719,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3957318693105487,
+      "confidence_score": 0.8697676724717178,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 2.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7866297896250483,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3065196506010415,
+      "confidence_score": 0.8662978962504828,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 3.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7865770737552649,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.2959847575099217,
+      "confidence_score": 0.8657707375526482,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 3.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7865244753578382,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4658806984550947,
+      "confidence_score": 0.8652447535783807,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 4.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7863964316214773,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4718759182943335,
+      "confidence_score": 0.8639643162147734,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 4.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7860665535277669,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4063801398428804,
+      "confidence_score": 0.8606655352776693,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 3.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7860491941715619,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.322141763331805,
+      "confidence_score": 0.8604919417156189,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 4.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7858698742011674,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.5024103393975,
+      "confidence_score": 0.8586987420116733,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 4.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7858132094842687,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4963252800363838,
+      "confidence_score": 0.8581320948426868,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 5.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7855634968707408,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.5397151254836003,
+      "confidence_score": 0.8556349687074081,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 4.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7855177138331424,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.5436952290536272,
+      "confidence_score": 0.8551771383314245,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 3.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7852260252034517,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.2930288806731443,
+      "confidence_score": 0.8522602520345182,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 4.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7851618981011961,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.396341255017073,
+      "confidence_score": 0.8516189810119611,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 5.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7851449069268133,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.5577330704368815,
+      "confidence_score": 0.8514490692681335,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 4.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7850559983055023,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.328160630739685,
+      "confidence_score": 0.8505599830550229,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 3.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.78479526616992,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.2872806309204061,
+      "confidence_score": 0.8479526616992009,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 5.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7845938235810268,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4061835844366248,
+      "confidence_score": 0.8459382358102685,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 4.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7845266191107327,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3618170574648447,
+      "confidence_score": 0.845266191107328,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 4.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7841825798581858,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.2900325133472808,
+      "confidence_score": 0.8418257985818576,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 5.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7841272644078987,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.390383946772292,
+      "confidence_score": 0.8412726440789868,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 3.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7836548493458455,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.2847543243649369,
+      "confidence_score": 0.8365484934584556,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 4.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7833257169797359,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.2825885437398967,
+      "confidence_score": 0.8332571697973578,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 4.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7829802707505715,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.2939169592469622,
+      "confidence_score": 0.8298027075057154,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 5.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7829106831561883,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3013791733091609,
+      "confidence_score": 0.8291068315618825,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 4.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7827807309406145,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3231431907753597,
+      "confidence_score": 0.8278073094061458,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "01_h",
+      "clip_limit": 5.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7827624106888444,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3499098330680397,
+      "confidence_score": 0.827624106888445,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 1.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.315921338576599,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 1.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.571598034407354,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 1.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.5138759486603877,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 1.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.8939796852703266,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 1.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.0227045704957813,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 1.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.0705625158157295,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 1.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.796129318192738,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 1.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.682529384318012,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 1.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.036040028368709,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 1.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.0570926453850658,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 1.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.1681730239676154,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 1.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.2205301865669766,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 2.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.0221316083588383,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 2.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.694919312584708,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 2.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.1487838641694834,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 2.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.1844287298238325,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 2.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.2920836573435937,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 2.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.2964661587407993,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 2.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.047371479799768,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 2.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.76018597848895,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 2.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.267908154664576,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 2.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.3186490087075446,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 2.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.42975406924025,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 2.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.441183104878178,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 3.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.3350124904756675,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 3.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.3499562134970793,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 3.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.5366741095549057,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 3.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.513554027607952,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 3.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.484942361864978,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 3.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.321629317750965,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 3.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.5654142079003805,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 3.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.5613246872353495,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 4.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.5446867840154663,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 4.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.304176770514461,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 4.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.5066744620172763,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 4.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.6120734715358074,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 4.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.6318877940260648,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 4.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.3307917365645983,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 4.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.5318033696779727,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 4.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.719019568289999,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 5.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.7124567882054533,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 5.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.49206095378244,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 5.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.7524050217878675,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 3.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7998819498647394,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.0915996029554944,
+      "confidence_score": 0.9988194986473925,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 3.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7995192000102869,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.1989285457318575,
+      "confidence_score": 0.9951920001028679,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 5.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7994596499572193,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.328866622307223,
+      "confidence_score": 0.9945964995721935,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 3.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.798841275123372,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.791485858716905,
+      "confidence_score": 0.9884127512337187,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 4.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7987627747026891,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.1982939002646575,
+      "confidence_score": 0.9876277470268916,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 4.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7981375568614661,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.1913850752029207,
+      "confidence_score": 0.9813755686146619,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 3.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7977090741687565,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.820519215830096,
+      "confidence_score": 0.9770907416875645,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 5.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7975795436618114,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.1750099957757216,
+      "confidence_score": 0.9757954366181127,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 4.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.796932252971575,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.8433749383070968,
+      "confidence_score": 0.9693225297157496,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 4.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7962069768385833,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.84063346560086,
+      "confidence_score": 0.9620697683858337,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "15_dr",
+      "clip_limit": 5.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7957674206843122,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.851440084249492,
+      "confidence_score": 0.9576742068431205,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 1.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.6584320829789094,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 1.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.6782425891668964,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 1.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.8,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.5399990435073316,
+      "confidence_score": 1.0,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 1.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7997095093216073,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4521319560123145,
+      "confidence_score": 0.9970950932160739,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 1.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7985781704829205,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.4144829325722377,
+      "confidence_score": 0.9857817048292039,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 1.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7984345341103567,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.9126582875476767,
+      "confidence_score": 0.9843453411035665,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 1.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7982009449596146,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.7476596928202146,
+      "confidence_score": 0.9820094495961466,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 1.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7973409960574409,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.907224403666295,
+      "confidence_score": 0.9734099605744084,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 1.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7969537732647876,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.3952452447814505,
+      "confidence_score": 0.9695377326478761,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 5.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7966075208547818,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 3.045773668524527,
+      "confidence_score": 0.9660752085478181,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 4.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7964061809109784,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.9339272274607913,
+      "confidence_score": 0.9640618091097837,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 2.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7962862301649858,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.0678755049350483,
+      "confidence_score": 0.9628623016498584,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 4.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7960801609127981,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.790068941731038,
+      "confidence_score": 0.9608016091279816,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 1.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7960595247880702,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.6533808300747541,
+      "confidence_score": 0.9605952478807018,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 3.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7959967539103416,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.65780647810354,
+      "confidence_score": 0.9599675391034163,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 3.0,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7958745956057036,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.4891028595550893,
+      "confidence_score": 0.9587459560570365,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 2.5,
+      "tile_grid_x": 12,
+      "tile_grid_y": 12,
+      "composite_score": 0.7957991000648277,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.2812916154992915,
+      "confidence_score": 0.9579910006482775,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 2.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7954958529376237,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.8717944213384123,
+      "confidence_score": 0.9549585293762357,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 1.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7951636619996392,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.6059593083088943,
+      "confidence_score": 0.9516366199963908,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 2.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7946961540998991,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.9715048405855267,
+      "confidence_score": 0.9469615409989907,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 1.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7941073441029702,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.6291873624706654,
+      "confidence_score": 0.9410734410297024,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 2.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.794020526730296,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.9920349271561864,
+      "confidence_score": 0.9402052673029588,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 2.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7939815650123672,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.8124081350751369,
+      "confidence_score": 0.9398156501236706,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 5.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.793818498161786,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.7352255955945024,
+      "confidence_score": 0.9381849816178591,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 4.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7935815107248598,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.631882387525222,
+      "confidence_score": 0.935815107248597,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 2.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7934963129906385,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.788957234833608,
+      "confidence_score": 0.9349631299063843,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 3.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7933907070968673,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.119804414654091,
+      "confidence_score": 0.9339070709686719,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 5.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.793116549013303,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.5246852964294804,
+      "confidence_score": 0.93116549013303,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 4.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7929903102281697,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.434616377586429,
+      "confidence_score": 0.9299031022816961,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 3.5,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7928947157356221,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.2119541186536598,
+      "confidence_score": 0.92894715735622,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 2.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7928514236535433,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.0167399059332225,
+      "confidence_score": 0.9285142365354329,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 4.0,
+      "tile_grid_x": 16,
+      "tile_grid_y": 16,
+      "composite_score": 0.7927240635981319,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.3072948117691734,
+      "confidence_score": 0.9272406359813183,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 2.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7925548877286868,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.9397645210789212,
+      "confidence_score": 0.9255488772868684,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 4.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7924954495255285,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.5380611460193943,
+      "confidence_score": 0.9249544952552857,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 2.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7923695308316085,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.8873586699752598,
+      "confidence_score": 0.9236953083160859,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 4.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7922991547218425,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.5657352491224894,
+      "confidence_score": 0.922991547218426,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 2.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7922318895579532,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.8131346867455167,
+      "confidence_score": 0.9223188955795313,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 4.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.7920932324238357,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.3482693716902663,
+      "confidence_score": 0.9209323242383562,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 5.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7920844828525466,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.565471205391353,
+      "confidence_score": 0.9208448285254658,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 3.0,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.791941077052676,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.061649663113539,
+      "confidence_score": 0.91941077052676,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 3.5,
+      "tile_grid_x": 8,
+      "tile_grid_y": 8,
+      "composite_score": 0.791786944051349,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.1944233357151033,
+      "confidence_score": 0.9178694405134895,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 3.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.791560365101299,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.330706061108142,
+      "confidence_score": 0.9156036510129901,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 2.5,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7915186682585127,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.006247176596046,
+      "confidence_score": 0.9151866825851269,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 3.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7913022915601853,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.0262873363038802,
+      "confidence_score": 0.9130229156018521,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 3.0,
+      "tile_grid_x": 4,
+      "tile_grid_y": 4,
+      "composite_score": 0.7911314881314442,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.149395103638128,
+      "confidence_score": 0.9113148813144408,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 3.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7911211511610947,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.9295674937263745,
+      "confidence_score": 0.9112115116109468,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 5.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7906150594655863,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.284439298056036,
+      "confidence_score": 0.9061505946558638,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 3.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7905875745636726,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.0865805606100687,
+      "confidence_score": 0.9058757456367252,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 3.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7901645198201195,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 1.9621461821077704,
+      "confidence_score": 0.9016451982011955,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 4.5,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.790077350907318,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.1516974714838693,
+      "confidence_score": 0.9007735090731803,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 4.0,
+      "tile_grid_x": 10,
+      "tile_grid_y": 10,
+      "composite_score": 0.7897592569620968,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.0263351790951067,
+      "confidence_score": 0.8975925696209682,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 4.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7895940140699158,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.0681214609336815,
+      "confidence_score": 0.8959401406991585,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 4.5,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7892923729812196,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.1042235798927864,
+      "confidence_score": 0.8929237298121949,
+      "enhancement_effective": true
+    },
+    {
+      "image_id": "12_g",
+      "clip_limit": 5.0,
+      "tile_grid_x": 6,
+      "tile_grid_y": 6,
+      "composite_score": 0.7892346646662036,
+      "clinical_relevance": 1.0,
+      "vessel_clarity_gain": 2.145171983036199,
+      "confidence_score": 0.8923466466620367,
+      "enhancement_effective": true
+    }
+  ],
+  "best_configs_per_image": [
+    {
+      "image_id": "03_g",
+      "best_params": {
+        "clip_limit": 1.0,
+        "tile_grid": [
+          4,
+          4
+        ],
+        "name": "clahe_c1.0_t4x4"
+      },
+      "best_score": 0.8,
+      "best_metrics": {
+        "clinical_relevance_score": 1.0,
+        "vessel_clarity_gain": 1.8049743885056266,
+        "enhancement_effective": true,
+        "confidence_score": 1.0
+      }
+    },
+    {
+      "image_id": "01_h",
+      "best_params": {
+        "clip_limit": 1.0,
+        "tile_grid": [
+          12,
+          12
+        ],
+        "name": "clahe_c1.0_t12x12"
+      },
+      "best_score": 0.8,
+      "best_metrics": {
+        "clinical_relevance_score": 1.0,
+        "vessel_clarity_gain": 1.4809017050938909,
+        "enhancement_effective": true,
+        "confidence_score": 1.0
+      }
+    },
+    {
+      "image_id": "15_dr",
+      "best_params": {
+        "clip_limit": 1.0,
+        "tile_grid": [
+          4,
+          4
+        ],
+        "name": "clahe_c1.0_t4x4"
+      },
+      "best_score": 0.8,
+      "best_metrics": {
+        "clinical_relevance_score": 1.0,
+        "vessel_clarity_gain": 2.315921338576599,
+        "enhancement_effective": true,
+        "confidence_score": 1.0
+      }
+    },
+    {
+      "image_id": "12_g",
+      "best_params": {
+        "clip_limit": 1.0,
+        "tile_grid": [
+          6,
+          6
+        ],
+        "name": "clahe_c1.0_t6x6"
+      },
+      "best_score": 0.8,
+      "best_metrics": {
+        "clinical_relevance_score": 1.0,
+        "vessel_clarity_gain": 1.6584320829789094,
+        "enhancement_effective": true,
+        "confidence_score": 1.0
+      }
+    }
+  ],
+  "parameter_statistics": {
+    "global_statistics": {
+      "clip_limit": {
+        "mean": 3.0,
+        "std": 1.293993278441261,
+        "median": 3.0,
+        "min": 1.0,
+        "max": 5.0,
+        "q25": 2.0,
+        "q75": 4.0
+      },
+      "tile_grid_x": {
+        "mean": 9.333333333333334,
+        "std": 3.9532147648140983,
+        "median": 9.0,
+        "min": 4.0,
+        "max": 16.0,
+        "q25": 6.0,
+        "q75": 12.0
+      },
+      "composite_score": {
+        "mean": 0.7956300677091211,
+        "std": 0.005414320380232166,
+        "median": 0.7992395071203604,
+        "min": 0.7827624106888444,
+        "max": 0.8,
+        "q25": 0.7919025438023443,
+        "q75": 0.8
+      },
+      "vessel_clarity_gain": {
+        "mean": 2.710689678055508,
+        "std": 1.3097187832284993,
+        "median": 2.519280622544934,
+        "min": 1.2825885437398967,
+        "max": 7.176139851354673,
+        "q25": 1.5303889289620751,
+        "q75": 3.3318469250423655
+      },
+      "confidence_score": {
+        "mean": 0.956300677091211,
+        "std": 0.05414320380232151,
+        "median": 0.992395071203604,
+        "min": 0.827624106888445,
+        "max": 1.0,
+        "q25": 0.9190254380234424,
+        "q75": 1.0
+      }
+    },
+    "parameter_distributions": {
+      "clip_limit": {
+        "means": {
+          "1.0": 0.7996665459036717,
+          "1.5": 0.7978263310029358,
+          "2.0": 0.7964044464436539,
+          "2.5": 0.7955224256144483,
+          "3.0": 0.7948160342670887,
+          "3.5": 0.7944141515251074,
+          "4.0": 0.794122343696431,
+          "4.5": 0.7940072486392095,
+          "5.0": 0.7938910822895443
+        },
+        "stds": {
+          "1.0": 0.0007302927367736306,
+          "1.5": 0.00248521761874723,
+          "2.0": 0.00392997090633396,
+          "2.5": 0.004913933787512909,
+          "3.0": 0.005649160703332938,
+          "3.5": 0.006043251513037787,
+          "4.0": 0.006344332395263476,
+          "4.5": 0.006511302579597542,
+          "5.0": 0.0065928112971044995
+        },
+        "counts": {
+          "1.0": 24,
+          "1.5": 24,
+          "2.0": 24,
+          "2.5": 24,
+          "3.0": 24,
+          "3.5": 24,
+          "4.0": 24,
+          "4.5": 24,
+          "5.0": 24
+        }
+      },
+      "tile_grid_x": {
+        "means": {
+          "4": 0.7948071333987333,
+          "6": 0.7951646411549365,
+          "8": 0.7955007340881353,
+          "10": 0.7954250061761747,
+          "12": 0.7967246280751533,
+          "16": 0.7961582633615938
+        },
+        "stds": {
+          "4": 0.006012078556053466,
+          "6": 0.005296317463336743,
+          "8": 0.005692401388344881,
+          "10": 0.005649196076352562,
+          "12": 0.004789749584873064,
+          "16": 0.0051110975643990884
+        },
+        "counts": {
+          "4": 36,
+          "6": 36,
+          "8": 36,
+          "10": 36,
+          "12": 36,
+          "16": 36
+        }
+      }
+    },
+    "optimal_ranges": {
+      "clip_limit": {
+        "min": 1.0,
+        "max": 4.5,
+        "mean": 2.546511627906977,
+        "most_frequent": 1.0
+      },
+      "tile_grid": {
+        "min": 4,
+        "max": 16,
+        "mean": 9.209302325581396,
+        "most_frequent": 4
+      }
+    },
+    "significance_tests": {
+      "clip_limit_effect": {
+        "f_statistic": 3.5648994834046137,
+        "p_value": 0.0006794818630083774,
+        "significant": true
+      },
+      "tile_grid_effect": {
+        "f_statistic": 0.5910750232681341,
+        "p_value": 0.706822924844525,
+        "significant": false
+      }
+    }
+  },
+  "correlation_matrix": {
+    "matrix": {
+      "clip_limit": {
+        "clip_limit": 1.0,
+        "tile_grid_x": 5.168437890669309e-17,
+        "composite_score": -0.32050434101426023,
+        "clinical_relevance": NaN,
+        "vessel_clarity_gain": 0.3671636442086869,
+        "confidence_score": -0.32050434101426634
+      },
+      "tile_grid_x": {
+        "clip_limit": 5.168437890669309e-17,
+        "tile_grid_x": 1.0,
+        "composite_score": 0.09713169519570246,
+        "clinical_relevance": NaN,
+        "vessel_clarity_gain": 0.10802568077681297,
+        "confidence_score": 0.09713169519570393
+      },
+      "composite_score": {
+        "clip_limit": -0.32050434101426023,
+        "tile_grid_x": 0.09713169519570246,
+        "composite_score": 1.0,
+        "clinical_relevance": NaN,
+        "vessel_clarity_gain": 0.6340305861316702,
+        "confidence_score": 1.0000000000000007
+      },
+      "clinical_relevance": {
+        "clip_limit": NaN,
+        "tile_grid_x": NaN,
+        "composite_score": NaN,
+        "clinical_relevance": NaN,
+        "vessel_clarity_gain": NaN,
+        "confidence_score": NaN
+      },
+      "vessel_clarity_gain": {
+        "clip_limit": 0.3671636442086869,
+        "tile_grid_x": 0.10802568077681297,
+        "composite_score": 0.6340305861316702,
+        "clinical_relevance": NaN,
+        "vessel_clarity_gain": 1.0,
+        "confidence_score": 0.6340305861316756
+      },
+      "confidence_score": {
+        "clip_limit": -0.32050434101426634,
+        "tile_grid_x": 0.09713169519570393,
+        "composite_score": 1.0000000000000007,
+        "clinical_relevance": NaN,
+        "vessel_clarity_gain": 0.6340305861316756,
+        "confidence_score": 1.0
+      }
+    },
+    "significant_correlations": [
+      {
+        "variable_1": "clip_limit",
+        "variable_2": "composite_score",
+        "correlation": -0.32050434101426023,
+        "strength": "weak"
+      },
+      {
+        "variable_1": "clip_limit",
+        "variable_2": "vessel_clarity_gain",
+        "correlation": 0.3671636442086869,
+        "strength": "weak"
+      },
+      {
+        "variable_1": "clip_limit",
+        "variable_2": "confidence_score",
+        "correlation": -0.32050434101426634,
+        "strength": "weak"
+      },
+      {
+        "variable_1": "composite_score",
+        "variable_2": "vessel_clarity_gain",
+        "correlation": 0.6340305861316702,
+        "strength": "moderate"
+      },
+      {
+        "variable_1": "composite_score",
+        "variable_2": "confidence_score",
+        "correlation": 1.0000000000000007,
+        "strength": "strong"
+      },
+      {
+        "variable_1": "vessel_clarity_gain",
+        "variable_2": "confidence_score",
+        "correlation": 0.6340305861316756,
+        "strength": "moderate"
+      }
+    ]
+  },
+  "clustering_results": {
+    "n_clusters": 2,
+    "clusters": {
+      "cluster_0": {
+        "images": [
+          "01_h"
+        ],
+        "size": 1,
+        "centroid": {
+          "clip_limit": 1.0,
+          "tile_grid": 12.0,
+          "score": 0.8
+        },
+        "characteristics": "Conservative (baixo clip, grid grande)"
+      },
+      "cluster_1": {
+        "images": [
+          "03_g",
+          "15_dr",
+          "12_g"
+        ],
+        "size": 3,
+        "centroid": {
+          "clip_limit": 1.0,
+          "tile_grid": 4.666666666666667,
+          "score": 0.8000000000000002
+        },
+        "characteristics": "Moderate (par\u00e2metros intermedi\u00e1rios)"
+      }
+    },
+    "silhouette_score": 0.6041666666666667
+  }
+}

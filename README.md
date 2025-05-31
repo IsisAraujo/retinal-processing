@@ -224,3 +224,35 @@ Para dúvidas técnicas ou sugestões:
 
 **Desenvolvido por Atlas de Conhecimento**
 _Pipeline científica para análise rigorosa de imagens oculares HRF_
+
+Use termos de busca em plataformas acadêmicas:
+
+Google Scholar:
+"Vision Transformer" AND ("HRF dataset" OR "retinal segmentation")
+"Transformer" AND "High-Resolution Fundus"
+
+PubMed/arXiv:
+"medical vision transformer", "retinal transformers".
+
+2. Artigos Recentes sobre HRF (Possível Integração com ViTs)
+   Embora a maioria dos trabalhos no HRF use CNNs, estes artigos são relevantes para entender o contexto do dataset:
+
+a) HRF como Benchmark
+Título: "High-Resolution Fundus (HRF) Image Database for Segmentation of Retinal Vessels"
+
+Relevância: Descreve o dataset HRF e seus desafios, como variações de iluminação e artefatos.
+
+b) Segmentação no HRF com Redes Profundas
+Título: "A Deep Learning Approach for Segmentation of Retinal Vessels in HRF Images"
+
+Relevância: Usa U-Net, mas fornece uma linha de base para comparar com ViTs.
+
+A combinação ViTs + HRF ainda é pouco explorada, o que abre oportunidades para:
+
+Publicar métodos inovadores de segmentação/classificação.
+
+Propor benchmarks comparando ViTs vs. CNNs no HRF.
+
+Explorar a eficiência de ViTs em dados de alta resolução (característica do HRF).
+
+fase de otimização paramétrica do seu estudo
