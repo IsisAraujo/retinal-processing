@@ -8,7 +8,7 @@ import numpy as np
 from scipy import ndimage
 from typing import Tuple
 from hrf_core import OphthalmicMetrics
-from hrf_utils import to_grayscale
+from hrf_utils import to_grayscale, normalize_image_for_display # Adicionado normalize_image_for_display
 
 class MetricsCalculator:
     """
@@ -38,10 +38,9 @@ class MetricsCalculator:
         return contrast_corrected / contrast_original
 
     @staticmethod
-    def calculate_vessel_clarity_index(image: np.ndarray) -> float:
+    def _get_vesselness_map(image: np.ndarray) -> np.ndarray:
         """
-        Vessel clarity based on Frangi vesselness filter response
-        Reference: Li et al. (2024) - "Automated vessel analysis in fundus images"
+        Helper to get the Frangi vesselness map (raw float values).
         """
         gray = to_grayscale(image)
 
@@ -74,7 +73,22 @@ class MetricsCalculator:
 
             vesselness = np.maximum(vesselness, vesselness_scale)
 
-        return np.mean(vesselness) # Removed division by 255.0
+        # Debug prints (mantidos para sua referência, podem ser removidos depois)
+        print(f"[DEBUG] Min vesselness (before norm): {np.min(vesselness)}")
+        print(f"[DEBUG] Max vesselness (before norm): {np.max(vesselness)}")
+
+        return vesselness # Retorna o mapa de vesselness bruto (float)
+
+    @staticmethod
+    def calculate_vessel_clarity_index(image: np.ndarray) -> float:
+        """
+        Vessel clarity based on Frangi vesselness filter response
+        Reference: Li et al. (2024) - "Automated vessel analysis in fundus images"
+        """
+        vesselness_map_raw = MetricsCalculator._get_vesselness_map(image)
+        # Normaliza para o range 0-255 para o cálculo da média, depois para 0-1
+        vesselness_map_normalized_for_mean = normalize_image_for_display(vesselness_map_raw)
+        return np.mean(vesselness_map_normalized_for_mean) / 255.0
 
     @staticmethod
     def calculate_illumination_uniformity(image: np.ndarray) -> float:

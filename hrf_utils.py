@@ -39,4 +39,14 @@ def convert_to_float_and_log(image: np.ndarray) -> np.ndarray:
     """
     return np.log(image.astype(np.float64) + 1.0)
 
+def normalize_image_for_display(image: np.ndarray, alpha: float = 1.0, beta: float = 0.0) -> np.ndarray:
+    """
+    Normalizes a float image to 0-255 (CV_8U) for display, applying optional contrast/brightness.
+    Clips values to 0-255 range.
+    """
+    normalized_image = cv2.normalize(image, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
+    # Apply optional contrast/brightness adjustment
+    adjusted_image = cv2.convertScaleAbs(normalized_image, alpha=alpha, beta=beta)
+    return adjusted_image
+
 

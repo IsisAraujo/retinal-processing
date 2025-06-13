@@ -1,0 +1,98 @@
+[
+  {
+    "image_id": "01_dr",
+    "method": "CLAHE",
+    "metrics": {
+      "contrast_ratio": 0.9618612769922115,
+      "vessel_clarity_index": 0.006476028566255426,
+      "illumination_uniformity": 0.7150862167700464,
+      "edge_preservation_index": 0.7399936810095418,
+      "microaneurysm_visibility": 0.07531747756588571
+    },
+    "processing_time_ms": 206.82120323181152
+  },
+  {
+    "image_id": "01_dr",
+    "method": "SSR",
+    "metrics": {
+      "contrast_ratio": 0.6072884573990879,
+      "vessel_clarity_index": 0.0036815916493732038,
+      "illumination_uniformity": 0.7974578452036631,
+      "edge_preservation_index": 0.19920296208441157,
+      "microaneurysm_visibility": 0.13768616208902
+    },
+    "processing_time_ms": 56216.989040374756
+  },
+  {
+    "image_id": "01_dr",
+    "method": "MSR",
+    "metrics": {
+      "contrast_ratio": 0.5482472867590567,
+      "vessel_clarity_index": 0.004577367242011585,
+      "illumination_uniformity": 0.818290694692652,
+      "edge_preservation_index": 0.165807360394455,
+      "microaneurysm_visibility": 0.22088131220029109
+    },
+    "processing_time_ms": 83409.62290763855
+  },
+  {
+    "image_id": "01_dr",
+    "method": "MSRCR",
+    "metrics": {
+      "contrast_ratio": 0.9375638717689789,
+      "vessel_clarity_index": 0.0012709650656722313,
+      "illumination_uniformity": 0.7234699570192307,
+      "edge_preservation_index": 0.2938172585668391,
+      "microaneurysm_visibility": 0.2695754875260263
+    },
+    "processing_time_ms": 83687.90698051453
+  },
+  {
+    "image_id": "01_g",
+    "method": "CLAHE",
+    "metrics": {
+      "contrast_ratio": 0.9592633905786567,
+      "vessel_clarity_index": 0.006251888597904915,
+      "illumination_uniformity": 0.719980965048018,
+      "edge_preservation_index": 0.6986973756469821,
+      "microaneurysm_visibility": 0.05915950501212269
+    },
+    "processing_time_ms": 162.123441696167
+  },
+  {
+    "image_id": "01_g",
+    "method": "SSR",
+    "metrics": {
+      "contrast_ratio": 0.5963374114090335,
+      "vessel_clarity_index": 0.003403583042962603,
+      "illumination_uniformity": 0.802727578816629,
+      "edge_preservation_index": 0.28757742305865047,
+      "microaneurysm_visibility": 0.12225383039967763
+    },
+    "processing_time_ms": 73373.68321418762
+  },
+  {
+    "image_id": "01_g",
+    "method": "MSR",
+    "metrics": {
+      "contrast_ratio": 0.5427838813996984,
+      "vessel_clarity_index": 0.0042898030584286005,
+      "illumination_uniformity": 0.8219590521985529,
+      "edge_preservation_index": 0.2475841305862062,
+      "microaneurysm_visibility": 0.1983767437525723
+    },
+    "processing_time_ms": 130231.39595985413
+  },
+  {
+    "image_id": "01_g",
+    "method": "MSRCR",
+    "metrics": {
+      "contrast_ratio": 0.950034258525377,
+      "vessel_clarity_index": 0.0012340161951438485,
+      "illumination_uniformity": 0.7243288618224396,
+      "edge_preservation_index": 0.303153350876293,
+      "microaneurysm_visibility": 0.2873234605270445
+    },
+    "processing_time_ms": 99579.54668998718
+  }
+]

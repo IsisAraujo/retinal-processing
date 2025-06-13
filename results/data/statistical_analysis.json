@@ -1,0 +1,68 @@
+{
+  "normality": {
+    "contrast_ratio": {},
+    "vessel_clarity_index": {},
+    "illumination_uniformity": {},
+    "edge_preservation_index": {},
+    "microaneurysm_visibility": {}
+  },
+  "homoscedasticity": {
+    "contrast_ratio": {
+      "statistic": 6.949378799392136e+27,
+      "p_value": 6.902187855941231e-56,
+      "equal_variances": false
+    },
+    "vessel_clarity_index": {
+      "statistic": 2.310717312115127e+29,
+      "p_value": 6.242881753257777e-59,
+      "equal_variances": false
+    },
+    "illumination_uniformity": {
+      "statistic": 6.46948311113106e+26,
+      "p_value": 7.964152700373448e-54,
+      "equal_variances": false
+    },
+    "edge_preservation_index": {
+      "statistic": 1.4205017418313506e+30,
+      "p_value": 1.6519435557328865e-60,
+      "equal_variances": false
+    },
+    "microaneurysm_visibility": {
+      "statistic": 8.400296080386162e+27,
+      "p_value": 4.723778856750662e-56,
+      "equal_variances": false
+    }
+  },
+  "comparisons": {
+    "contrast_ratio": {
+      "test": "Kruskal-Wallis H-test",
+      "statistic": 6.666666666666664,
+      "p_value": 0.08331630551120185,
+      "significant": false
+    },
+    "vessel_clarity_index": {
+      "test": "Kruskal-Wallis H-test",
+      "statistic": 6.666666666666664,
+      "p_value": 0.08331630551120185,
+      "significant": false
+    },
+    "illumination_uniformity": {
+      "test": "Kruskal-Wallis H-test",
+      "statistic": 6.666666666666664,
+      "p_value": 0.08331630551120185,
+      "significant": false
+    },
+    "edge_preservation_index": {
+      "test": "Kruskal-Wallis H-test",
+      "statistic": 6.166666666666664,
+      "p_value": 0.10377716386905098,
+      "significant": false
+    },
+    "microaneurysm_visibility": {
+      "test": "Kruskal-Wallis H-test",
+      "statistic": 6.666666666666664,
+      "p_value": 0.08331630551120185,
+      "significant": false
+    }
+  }
+}
