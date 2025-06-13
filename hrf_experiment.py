@@ -18,7 +18,7 @@ from hrf_metrics import MetricsCalculator
 from hrf_analysis import StatisticalAnalyzer, AcademicVisualizer
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 class HRFExperiment:
@@ -48,7 +48,7 @@ class HRFExperiment:
 
     def load_dataset(self, sample_size: Optional[int] = None) -> List[Tuple[str, np.ndarray]]:
         """Load HRF dataset images"""
-        supported_formats = ('.jpg', '.jpeg', '.tif', '.tiff', '.png', '.JPG')
+        supported_formats = (".jpg", ".jpeg", ".tif", ".tiff", ".png", ".JPG")
         image_files = [f for f in self.dataset_path.iterdir()
                       if f.suffix.lower() in supported_formats]
 
@@ -105,7 +105,7 @@ class HRFExperiment:
             results.append(result)
 
             logger.info(f"  {method_name}: Contrast={metrics.contrast_ratio:.3f}, "
-                       f"Vessels={metrics.vessel_clarity_index:.3f}, "
+                       f"Vessels={metrics.vessel_clarity_index:.5f}, "  # Alterado para 5 casas decimais
                        f"Time={processing_time_ms:.1f}ms")
 
         return results
@@ -160,26 +160,6 @@ class HRFExperiment:
 
         logger.info(f"Saved metrics data to {json_path}")
 
-    def convert_numpy_types(self, obj):
-        """Converte tipos do NumPy para tipos Python nativos recursivamente"""
-        import numpy as np
-        if isinstance(obj, np.integer):
-            return int(obj)
-        elif isinstance(obj, np.floating):
-            return float(obj)
-        elif isinstance(obj, np.ndarray):
-            return obj.tolist()
-        elif isinstance(obj, np.bool_):
-            return bool(obj)
-        elif isinstance(obj, dict):
-            return {k: self.convert_numpy_types(v) for k, v in obj.items()}
-        elif isinstance(obj, list):
-            return [self.convert_numpy_types(i) for i in obj]
-        elif isinstance(obj, tuple):
-            return tuple(self.convert_numpy_types(i) for i in obj)
-        else:
-            return obj
-
     def _perform_analysis(self):
         """Perform statistical analysis"""
         analyzer = StatisticalAnalyzer()
@@ -212,7 +192,7 @@ class HRFExperiment:
 
         stats_path = self.output_dir / 'data' / 'statistical_analysis.json'
         with open(stats_path, 'w') as f:
-            json.dump(self.convert_numpy_types(stats_results), f, indent=2)
+            json.dump(stats_results, f, indent=2)
 
         logger.info("Statistical analysis completed")
 
@@ -315,3 +295,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+

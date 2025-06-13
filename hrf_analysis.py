@@ -5,13 +5,13 @@ Implements rigorous statistical tests and publication-ready figures
 
 import numpy as np
 import pandas as pd
-import cv2
 import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
 from typing import Dict, List, Tuple, Optional
 from pathlib import Path
 import json
+import cv2
 
 # Academic publication settings
 plt.rcParams.update({
@@ -118,7 +118,7 @@ class StatisticalAnalyzer:
                     results[metric][method] = {
                         'statistic': statistic,
                         'p_value': p_value,
-                        'normal': p_value > 0.05
+                        'normal': bool(p_value > 0.05) # Convert numpy.bool_ to Python bool
                     }
         return results
 
@@ -140,7 +140,7 @@ class StatisticalAnalyzer:
                 results[metric] = {
                     'statistic': statistic,
                     'p_value': p_value,
-                    'equal_variances': p_value > 0.05
+                    'equal_variances': bool(p_value > 0.05) # Convert numpy.bool_ to Python bool
                 }
         return results
 
@@ -180,7 +180,7 @@ class StatisticalAnalyzer:
                 'test': test_name,
                 'statistic': statistic,
                 'p_value': p_value,
-                'significant': p_value < 0.05
+                'significant': bool(p_value < 0.05) # Convert numpy.bool_ to Python bool
             }
 
             # Post-hoc tests if significant
@@ -225,7 +225,7 @@ class StatisticalAnalyzer:
                     'test': test,
                     'statistic': statistic,
                     'p_value': p_value,
-                    'significant': p_value < alpha_corrected,
+                    'significant': bool(p_value < alpha_corrected), # Convert numpy.bool_ to Python bool
                     'cohens_d': cohens_d
                 }
 
@@ -354,34 +354,4 @@ class AcademicVisualizer:
 
         return csv_path
 
-    @staticmethod
-    def create_performance_scatter(df: pd.DataFrame, output_dir: Path) -> Path:
-        """
-        Create performance scatter plot comparing metrics across methods
-        """
-        # Calculate composite quality score
-        quality_metrics = ['contrast_ratio', 'vessel_clarity_index', 'microaneurysm_visibility']
-        df['quality_score'] = df[quality_metrics].mean(axis=1)
 
-        fig, ax = plt.subplots(figsize=(8, 6))
-
-        methods = df['method'].unique()
-        colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
-
-        for method, color in zip(methods, colors):
-            method_data = df[df['method'] == method]
-            ax.scatter(method_data['processing_time_ms'],
-                      method_data['quality_score'],
-                      label=method, color=color, alpha=0.6, s=50)
-
-        ax.set_xlabel('Processing Time (ms)')
-        ax.set_ylabel('Composite Quality Score')
-        ax.set_title('Quality-Performance Trade-off Analysis')
-        ax.legend()
-        ax.grid(True, alpha=0.3)
-
-        output_path = output_dir / 'performance_analysis.pdf'
-        plt.savefig(output_path, format='pdf')
-        plt.close()
-
-        return output_path

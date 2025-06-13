@@ -7,6 +7,7 @@ import cv2
 import numpy as np
 from typing import List, Dict
 from hrf_core import IlluminationMethod
+from hrf_utils import calculate_gaussian_kernel_size, normalize_reflectance, convert_to_float_and_log
 
 class CLAHEMethod(IlluminationMethod):
     """
@@ -52,22 +53,19 @@ class SingleScaleRetinex(IlluminationMethod):
         }
 
     def process(self, image: np.ndarray, sigma: float = 250) -> np.ndarray:
-        # Convert to float for precision
-        img_float = image.astype(np.float64) + 1.0  # Avoid log(0)
+        # Convert to float for precision and apply log
+        log_img_float = convert_to_float_and_log(image)
 
         # Gaussian filtering for illumination estimation
-        kernel_size = int(6 * sigma + 1)
-        if kernel_size % 2 == 0:
-            kernel_size += 1
-
-        illumination = cv2.GaussianBlur(img_float, (kernel_size, kernel_size), sigma)
+        kernel_size = calculate_gaussian_kernel_size(sigma)
+        illumination = cv2.GaussianBlur(image.astype(np.float64) + 1.0, (kernel_size, kernel_size), sigma)
+        log_illumination = np.log(illumination + 1e-6)
 
         # Compute reflectance in log domain
-        reflectance = np.log(img_float) - np.log(illumination + 1e-6)
+        reflectance = log_img_float - log_illumination
 
         # Normalize using percentile-based scaling
-        p2, p98 = np.percentile(reflectance, [2, 98])
-        reflectance = np.clip((reflectance - p2) / (p98 - p2 + 1e-6), 0, 1)
+        reflectance = normalize_reflectance(reflectance)
 
         return (reflectance * 255).astype(np.uint8)
 
@@ -89,23 +87,20 @@ class MultiScaleRetinex(IlluminationMethod):
         if sigmas is None:
             sigmas = self.get_default_parameters()['sigmas']
 
-        img_float = image.astype(np.float64) + 1.0
-        msr_output = np.zeros_like(img_float)
+        log_img_float = convert_to_float_and_log(image)
+        msr_output = np.zeros_like(log_img_float)
 
         for sigma in sigmas:
-            kernel_size = int(6 * sigma + 1)
-            if kernel_size % 2 == 0:
-                kernel_size += 1
-
-            illumination = cv2.GaussianBlur(img_float, (kernel_size, kernel_size), sigma)
-            reflectance = np.log(img_float) - np.log(illumination + 1e-6)
+            kernel_size = calculate_gaussian_kernel_size(sigma)
+            illumination = cv2.GaussianBlur(image.astype(np.float64) + 1.0, (kernel_size, kernel_size), sigma)
+            log_illumination = np.log(illumination + 1e-6)
+            reflectance = log_img_float - log_illumination
             msr_output += reflectance
 
         msr_output /= len(sigmas)
 
         # Normalize
-        p2, p98 = np.percentile(msr_output, [2, 98])
-        msr_output = np.clip((msr_output - p2) / (p98 - p2 + 1e-6), 0, 1)
+        msr_output = normalize_reflectance(msr_output)
 
         return (msr_output * 255).astype(np.uint8)
 
@@ -134,16 +129,14 @@ class MultiScaleRetinexColorRestoration(IlluminationMethod):
             sigmas = self.get_default_parameters()['sigmas']
 
         img_float = image.astype(np.float64) + 1.0
+        log_img_float = np.log(img_float)
 
         # Multi-scale retinex
-        msr_output = np.zeros_like(img_float)
+        msr_output = np.zeros_like(log_img_float)
         for sigma in sigmas:
-            kernel_size = int(6 * sigma + 1)
-            if kernel_size % 2 == 0:
-                kernel_size += 1
-
+            kernel_size = calculate_gaussian_kernel_size(sigma)
             illumination = cv2.GaussianBlur(img_float, (kernel_size, kernel_size), sigma)
-            reflectance = np.log(img_float) - np.log(illumination + 1e-6)
+            reflectance = log_img_float - np.log(illumination + 1e-6)
             msr_output += reflectance
 
         msr_output /= len(sigmas)
@@ -159,3 +152,5 @@ class MultiScaleRetinexColorRestoration(IlluminationMethod):
         msrcr = np.clip(msrcr, 0, 255).astype(np.uint8)
 
         return msrcr
+
+

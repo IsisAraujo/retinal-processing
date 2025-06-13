@@ -8,6 +8,7 @@ import numpy as np
 from scipy import ndimage
 from typing import Tuple
 from hrf_core import OphthalmicMetrics
+from hrf_utils import to_grayscale
 
 class MetricsCalculator:
     """
@@ -22,7 +23,7 @@ class MetricsCalculator:
         Reference: Zhao et al. (2023) - "Contrast metrics for retinal imaging"
         """
         def weber_contrast(image):
-            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) if len(image.shape) == 3 else image
+            gray = to_grayscale(image)
             mean_luminance = np.mean(gray)
             if mean_luminance < 1e-6:
                 return 0.0
@@ -42,7 +43,7 @@ class MetricsCalculator:
         Vessel clarity based on Frangi vesselness filter response
         Reference: Li et al. (2024) - "Automated vessel analysis in fundus images"
         """
-        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) if len(image.shape) == 3 else image
+        gray = to_grayscale(image)
 
         # Multi-scale vessel enhancement
         scales = [1, 2, 3, 4]  # Vessel widths in pixels
@@ -73,7 +74,7 @@ class MetricsCalculator:
 
             vesselness = np.maximum(vesselness, vesselness_scale)
 
-        return np.mean(vesselness) / 255.0
+        return np.mean(vesselness) # Removed division by 255.0
 
     @staticmethod
     def calculate_illumination_uniformity(image: np.ndarray) -> float:
@@ -81,7 +82,7 @@ class MetricsCalculator:
         Measure illumination uniformity using coefficient of variation
         Reference: Singh et al. (2023) - "Illumination assessment in fundus photography"
         """
-        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) if len(image.shape) == 3 else image
+        gray = to_grayscale(image)
 
         # Divide image into blocks
         block_size = 64
@@ -109,7 +110,7 @@ class MetricsCalculator:
         Reference: Chen et al. (2022) - "Structure preservation in retinal enhancement"
         """
         def gradient_magnitude(image):
-            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) if len(image.shape) == 3 else image
+            gray = to_grayscale(image)
             grad_x = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=3)
             grad_y = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=3)
             return np.sqrt(grad_x**2 + grad_y**2)
@@ -128,7 +129,7 @@ class MetricsCalculator:
         Local contrast in regions likely to contain microaneurysms
         Reference: Kumar et al. (2024) - "Microaneurysm detection in diabetic retinopathy"
         """
-        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) if len(image.shape) == 3 else image
+        gray = to_grayscale(image)
 
         # Detect small dark regions (potential microaneurysms)
         # Using morphological operations
@@ -145,7 +146,9 @@ class MetricsCalculator:
     @staticmethod
     def calculate_all_metrics(original: np.ndarray,
                             corrected: np.ndarray) -> OphthalmicMetrics:
-        """Calculate all ophthalmology-specific metrics"""
+        """
+        Calculate all ophthalmology-specific metrics
+        """
         return OphthalmicMetrics(
             contrast_ratio=MetricsCalculator.calculate_weber_contrast_ratio(original, corrected),
             vessel_clarity_index=MetricsCalculator.calculate_vessel_clarity_index(corrected),
@@ -153,3 +156,5 @@ class MetricsCalculator:
             edge_preservation_index=MetricsCalculator.calculate_edge_preservation_index(original, corrected),
             microaneurysm_visibility=MetricsCalculator.calculate_microaneurysm_visibility(corrected)
         )
+
+
