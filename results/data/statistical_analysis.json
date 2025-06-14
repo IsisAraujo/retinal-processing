@@ -1,68 +1,393 @@
 {
   "normality": {
-    "contrast_ratio": {},
-    "vessel_clarity_index": {},
-    "illumination_uniformity": {},
-    "edge_preservation_index": {},
-    "microaneurysm_visibility": {}
+    "contrast_ratio": {
+      "CLAHE": {
+        "statistic": 0.9697431312969451,
+        "p_value": 0.2834383244208014,
+        "normal": true
+      },
+      "SSR": {
+        "statistic": 0.9842735428059397,
+        "p_value": 0.7922350662238552,
+        "normal": true
+      },
+      "MSR": {
+        "statistic": 0.9660970643449249,
+        "p_value": 0.2078815424648668,
+        "normal": true
+      },
+      "MSRCR": {
+        "statistic": 0.940117609109504,
+        "p_value": 0.021720123573798534,
+        "normal": false
+      }
+    },
+    "vessel_clarity_index": {
+      "CLAHE": {
+        "statistic": 0.8809501224088986,
+        "p_value": 0.00025467967421461134,
+        "normal": false
+      },
+      "SSR": {
+        "statistic": 0.9577046547549772,
+        "p_value": 0.09982625511256948,
+        "normal": true
+      },
+      "MSR": {
+        "statistic": 0.922037538427154,
+        "p_value": 0.004959616025132464,
+        "normal": false
+      },
+      "MSRCR": {
+        "statistic": 0.9589364465289631,
+        "p_value": 0.11125092355016203,
+        "normal": true
+      }
+    },
+    "illumination_uniformity": {
+      "CLAHE": {
+        "statistic": 0.9778821074180988,
+        "p_value": 0.536417479894578,
+        "normal": true
+      },
+      "SSR": {
+        "statistic": 0.981386604228167,
+        "p_value": 0.6761686814476137,
+        "normal": true
+      },
+      "MSR": {
+        "statistic": 0.9781988330590068,
+        "p_value": 0.5485427648414354,
+        "normal": true
+      },
+      "MSRCR": {
+        "statistic": 0.9844157736838627,
+        "p_value": 0.7977060929561255,
+        "normal": true
+      }
+    },
+    "edge_preservation_index": {
+      "CLAHE": {
+        "statistic": 0.9648937366239116,
+        "p_value": 0.187347729597111,
+        "normal": true
+      },
+      "SSR": {
+        "statistic": 0.9660771013973569,
+        "p_value": 0.2075243157350104,
+        "normal": true
+      },
+      "MSR": {
+        "statistic": 0.9576818216836603,
+        "p_value": 0.09962591851949974,
+        "normal": true
+      },
+      "MSRCR": {
+        "statistic": 0.9645915911868275,
+        "p_value": 0.1825010670144266,
+        "normal": true
+      }
+    },
+    "microaneurysm_visibility": {
+      "CLAHE": {
+        "statistic": 0.7530084408050176,
+        "p_value": 2.549991690478721e-07,
+        "normal": false
+      },
+      "SSR": {
+        "statistic": 0.8412650075111745,
+        "p_value": 2.19901249807517e-05,
+        "normal": false
+      },
+      "MSR": {
+        "statistic": 0.8549287315807516,
+        "p_value": 4.9151168134626946e-05,
+        "normal": false
+      },
+      "MSRCR": {
+        "statistic": 0.9275915868004742,
+        "p_value": 0.007717638877194718,
+        "normal": false
+      }
+    }
   },
   "homoscedasticity": {
     "contrast_ratio": {
-      "statistic": 6.949378799392136e+27,
-      "p_value": 6.902187855941231e-56,
+      "statistic": 7.8309809572927325,
+      "p_value": 6.177119005568542e-05,
       "equal_variances": false
     },
     "vessel_clarity_index": {
-      "statistic": 2.310717312115127e+29,
-      "p_value": 6.242881753257777e-59,
+      "statistic": 21.38630829900563,
+      "p_value": 7.373801569567043e-12,
       "equal_variances": false
     },
     "illumination_uniformity": {
-      "statistic": 6.46948311113106e+26,
-      "p_value": 7.964152700373448e-54,
+      "statistic": 25.559823929550593,
+      "p_value": 8.954663487345759e-14,
       "equal_variances": false
     },
     "edge_preservation_index": {
-      "statistic": 1.4205017418313506e+30,
-      "p_value": 1.6519435557328865e-60,
-      "equal_variances": false
+      "statistic": 0.26698336435537423,
+      "p_value": 0.8491328252193335,
+      "equal_variances": true
     },
     "microaneurysm_visibility": {
-      "statistic": 8.400296080386162e+27,
-      "p_value": 4.723778856750662e-56,
+      "statistic": 14.213494940173597,
+      "p_value": 2.4555748177636723e-08,
       "equal_variances": false
     }
   },
   "comparisons": {
     "contrast_ratio": {
       "test": "Kruskal-Wallis H-test",
-      "statistic": 6.666666666666664,
-      "p_value": 0.08331630551120185,
-      "significant": false
+      "statistic": 154.39306732146508,
+      "p_value": 2.9717443848190425e-33,
+      "significant": true,
+      "post_hoc": {
+        "CLAHE_vs_SSR": {
+          "test": "Mann-Whitney U",
+          "statistic": 2025.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": 10.651696600050878
+        },
+        "CLAHE_vs_MSR": {
+          "test": "Mann-Whitney U",
+          "statistic": 2025.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": 17.0675262611104
+        },
+        "CLAHE_vs_MSRCR": {
+          "test": "Mann-Whitney U",
+          "statistic": 1818.0,
+          "p_value": 8.242403086095306e-11,
+          "significant": true,
+          "cohens_d": 1.6395393045081588
+        },
+        "SSR_vs_MSR": {
+          "test": "Mann-Whitney U",
+          "statistic": 1775.0,
+          "p_value": 7.791807723172134e-10,
+          "significant": true,
+          "cohens_d": 1.642788448295954
+        },
+        "SSR_vs_MSRCR": {
+          "test": "Mann-Whitney U",
+          "statistic": 0.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": -8.965014741305062
+        },
+        "MSR_vs_MSRCR": {
+          "test": "Mann-Whitney U",
+          "statistic": 0.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": -13.94431679779708
+        }
+      }
     },
     "vessel_clarity_index": {
       "test": "Kruskal-Wallis H-test",
-      "statistic": 6.666666666666664,
-      "p_value": 0.08331630551120185,
-      "significant": false
+      "statistic": 165.00026191937798,
+      "p_value": 1.527352603718112e-35,
+      "significant": true,
+      "post_hoc": {
+        "CLAHE_vs_SSR": {
+          "test": "Mann-Whitney U",
+          "statistic": 2025.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": 3.112781065615909
+        },
+        "CLAHE_vs_MSR": {
+          "test": "Mann-Whitney U",
+          "statistic": 1974.0,
+          "p_value": 8.835592546169331e-15,
+          "significant": true,
+          "cohens_d": 1.8644163144597612
+        },
+        "CLAHE_vs_MSRCR": {
+          "test": "Mann-Whitney U",
+          "statistic": 2025.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": 6.632514523914341
+        },
+        "SSR_vs_MSR": {
+          "test": "Mann-Whitney U",
+          "statistic": 35.0,
+          "p_value": 3.1681729448528615e-15,
+          "significant": true,
+          "cohens_d": -3.3384211173845113
+        },
+        "SSR_vs_MSRCR": {
+          "test": "Mann-Whitney U",
+          "statistic": 2025.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": 9.691268001851526
+        },
+        "MSR_vs_MSRCR": {
+          "test": "Mann-Whitney U",
+          "statistic": 2025.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": 13.37533595549474
+        }
+      }
     },
     "illumination_uniformity": {
       "test": "Kruskal-Wallis H-test",
-      "statistic": 6.666666666666664,
-      "p_value": 0.08331630551120185,
-      "significant": false
+      "statistic": 167.03152854511973,
+      "p_value": 5.56520071513781e-36,
+      "significant": true,
+      "post_hoc": {
+        "CLAHE_vs_SSR": {
+          "test": "Mann-Whitney U",
+          "statistic": 0.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": -12.129009367663087
+        },
+        "CLAHE_vs_MSR": {
+          "test": "Mann-Whitney U",
+          "statistic": 0.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": -20.790997476520236
+        },
+        "CLAHE_vs_MSRCR": {
+          "test": "Mann-Whitney U",
+          "statistic": 0.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": -3.473903300335191
+        },
+        "SSR_vs_MSR": {
+          "test": "Mann-Whitney U",
+          "statistic": 24.0,
+          "p_value": 1.5503872195786876e-15,
+          "significant": true,
+          "cohens_d": -3.0220093862505424
+        },
+        "SSR_vs_MSRCR": {
+          "test": "Mann-Whitney U",
+          "statistic": 2025.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": 11.790245030173764
+        },
+        "MSR_vs_MSRCR": {
+          "test": "Mann-Whitney U",
+          "statistic": 2025.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": 24.21732101368195
+        }
+      }
     },
     "edge_preservation_index": {
-      "test": "Kruskal-Wallis H-test",
-      "statistic": 6.166666666666664,
-      "p_value": 0.10377716386905098,
-      "significant": false
+      "test": "One-way ANOVA",
+      "statistic": 2221.9456932798394,
+      "p_value": 1.3516372716952538e-139,
+      "significant": true,
+      "post_hoc": {
+        "CLAHE_vs_SSR": {
+          "test": "t-test",
+          "statistic": 65.54601720841966,
+          "p_value": 1.7639267924678232e-76,
+          "significant": true,
+          "cohens_d": 13.81831372874651
+        },
+        "CLAHE_vs_MSR": {
+          "test": "t-test",
+          "statistic": 73.78974540509151,
+          "p_value": 6.296370589007777e-81,
+          "significant": true,
+          "cohens_d": 15.556244229602216
+        },
+        "CLAHE_vs_MSRCR": {
+          "test": "t-test",
+          "statistic": 60.13221426813437,
+          "p_value": 2.9504360453075145e-73,
+          "significant": true,
+          "cohens_d": 12.676983855771974
+        },
+        "SSR_vs_MSR": {
+          "test": "t-test",
+          "statistic": 4.709455241670182,
+          "p_value": 9.204789656754452e-06,
+          "significant": true,
+          "cohens_d": 0.9928403401530995
+        },
+        "SSR_vs_MSRCR": {
+          "test": "t-test",
+          "statistic": -10.74035228418378,
+          "p_value": 1.101473874493935e-17,
+          "significant": true,
+          "cohens_d": -2.26426507270752
+        },
+        "MSR_vs_MSRCR": {
+          "test": "t-test",
+          "statistic": -16.394136329684844,
+          "p_value": 1.7405118261593056e-28,
+          "significant": true,
+          "cohens_d": -3.456187404874481
+        }
+      }
     },
     "microaneurysm_visibility": {
       "test": "Kruskal-Wallis H-test",
-      "statistic": 6.666666666666664,
-      "p_value": 0.08331630551120185,
-      "significant": false
+      "statistic": 165.70114180478822,
+      "p_value": 1.0780891460894578e-35,
+      "significant": true,
+      "post_hoc": {
+        "CLAHE_vs_SSR": {
+          "test": "Mann-Whitney U",
+          "statistic": 0.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": -5.563171992301993
+        },
+        "CLAHE_vs_MSR": {
+          "test": "Mann-Whitney U",
+          "statistic": 0.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": -8.590246956883552
+        },
+        "CLAHE_vs_MSRCR": {
+          "test": "Mann-Whitney U",
+          "statistic": 0.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": -8.724552408438704
+        },
+        "SSR_vs_MSR": {
+          "test": "Mann-Whitney U",
+          "statistic": 0.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": -4.171184246681048
+        },
+        "SSR_vs_MSRCR": {
+          "test": "Mann-Whitney U",
+          "statistic": 0.0,
+          "p_value": 3.1736851103720565e-16,
+          "significant": true,
+          "cohens_d": -5.63230873247372
+        },
+        "MSR_vs_MSRCR": {
+          "test": "Mann-Whitney U",
+          "statistic": 66.0,
+          "p_value": 2.2769189651815957e-14,
+          "significant": true,
+          "cohens_d": -2.315080200894865
+        }
+      }
     }
   }
 }

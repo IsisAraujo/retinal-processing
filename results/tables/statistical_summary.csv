@@ -1,6 +1,6 @@
 Metric,Test,Statistic,p-value,Significant
-Contrast Ratio,Kruskal-Wallis H-test,6.667,0.0833,No
-Vessel Clarity Index,Kruskal-Wallis H-test,6.667,0.0833,No
-Illumination Uniformity,Kruskal-Wallis H-test,6.667,0.0833,No
-Edge Preservation Index,Kruskal-Wallis H-test,6.167,0.1038,No
-Microaneurysm Visibility,Kruskal-Wallis H-test,6.667,0.0833,No
+Contrast Ratio,Kruskal-Wallis H-test,154.393,0.0000,Yes
+Vessel Clarity Index,Kruskal-Wallis H-test,165.000,0.0000,Yes
+Illumination Uniformity,Kruskal-Wallis H-test,167.032,0.0000,Yes
+Edge Preservation Index,One-way ANOVA,2221.946,0.0000,Yes
+Microaneurysm Visibility,Kruskal-Wallis H-test,165.701,0.0000,Yes
