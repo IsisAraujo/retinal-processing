@@ -3,9 +3,6 @@ HRF Results Visualization Module
 
 Generates publication-quality visualizations from experimental results
 for inclusion in LaTeX documents and academic papers.
-
-Author: [Isis Araaujo]
-Affiliation: [Universidade Federal de Sergipe, Brazil]
 """
 
 import pandas as pd
@@ -19,25 +16,20 @@ import matplotlib.ticker as ticker
 from matplotlib.gridspec import GridSpec
 from scipy import stats
 
-# Configurações para visualizações adequadas para publicação
+# Usando as mesmas configurações de estilo do hrf_analysis.py
 plt.rcParams.update({
-    'font.family': 'sans',
     'font.size': 10,
     'axes.labelsize': 10,
     'axes.titlesize': 11,
     'xtick.labelsize': 9,
     'ytick.labelsize': 9,
     'legend.fontsize': 9,
-    'figure.titlesize': 11,
-    'text.usetex': False,  # Mudar para True se tiver LaTeX instalado
-    'figure.figsize': (8, 6),
+    'figure.titlesize': 12,
+    'font.family': 'serif',
+    'text.usetex': False,  # Set to True if LaTeX is available
     'figure.dpi': 300,
-    'savefig.dpi': 600,
-    'savefig.format': 'pdf',
-    'savefig.bbox': 'tight',
-    'axes.grid': True,
-    'grid.alpha': 0.3,
-    'axes.axisbelow': True
+    'savefig.dpi': 300,
+    'savefig.bbox': 'tight'
 })
 
 class HRFVisualizer:
@@ -61,7 +53,7 @@ class HRFVisualizer:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(exist_ok=True, parents=True)
 
-        # Define consistent color palette for methods
+        # Define consistent color palette for methods, similar to default seaborn colors
         self.method_colors = {
             'CLAHE': '#1f77b4',  # Blue
             'SSR': '#ff7f0e',    # Orange
@@ -119,11 +111,12 @@ class HRFVisualizer:
             y_max = data[metric].max() * 1.05
             y_step = data[metric].std() * 0.2
 
-            # Add overall significance
-            ax.text(0.5, 0.99, f"Kruskal-Wallis: p = {p_value:.4f}" if p_value >= 0.0001
+            # Add overall significance with background box for readability
+            ax.text(0.5, 0.92, f"Kruskal-Wallis: p = {p_value:.4f}" if p_value >= 0.0001
                     else "Kruskal-Wallis: p < 0.0001",
                     ha='center', va='top', transform=ax.transAxes,
-                    fontsize=8, style='italic')
+                    fontsize=8, style='italic',
+                    bbox=dict(facecolor='white', alpha=0.7, edgecolor='none', pad=2))
 
             # Perform post-hoc Mann-Whitney U tests with Bonferroni correction
             num_comparisons = len(methods) * (len(methods) - 1) // 2
@@ -166,6 +159,7 @@ class HRFVisualizer:
     def create_boxplots(self, show_points: bool = True) -> str:
         """
         Create box plots for all quality metrics, comparing different methods.
+        Similar to create_metrics_boxplots in hrf_analysis.py
 
         Parameters:
         -----------
@@ -178,7 +172,7 @@ class HRFVisualizer:
             Path to saved figure
         """
         # Create a figure with subplots for each metric
-        fig, axes = plt.subplots(3, 2, figsize=(10, 12))
+        fig, axes = plt.subplots(2, 3, figsize=(12, 8))
         axes = axes.flatten()
 
         # For each metric, create a box plot
@@ -186,13 +180,14 @@ class HRFVisualizer:
             if i < len(axes):
                 ax = axes[i]
 
-                # Create box plot
+                # Create box plot with seaborn for better appearance
                 sns.boxplot(
                     x='method',
                     y=metric,
+                    hue='method',
                     data=self.df,
                     palette=self.method_colors,
-                    width=0.6,
+                    legend=False,
                     ax=ax
                 )
 
@@ -209,10 +204,11 @@ class HRFVisualizer:
                         ax=ax
                     )
 
-                # Set labels and title
-                ax.set_xlabel('')
-                ax.set_ylabel(self.metric_labels[metric])
-                ax.set_title(self.metric_labels[metric], fontweight='bold')
+                # Set labels and title - similar to hrf_analysis.py style
+                ax.set_title(self.metric_labels[metric])
+                ax.set_xlabel('Method')
+                ax.set_ylabel('Value')
+                ax.grid(True, alpha=0.3)
 
                 # Format y-axis
                 ax.yaxis.set_major_formatter(ticker.FormatStrFormatter('%.2f'))
@@ -224,16 +220,12 @@ class HRFVisualizer:
         if len(self.metrics) < len(axes):
             ax = axes[len(self.metrics)]
 
-            # Convert to log scale for better visualization
-            self.df['processing_time_log'] = np.log10(self.df['processing_time_ms'])
-
-            # Create box plot for processing time (log scale)
+            # Box plot for processing time (log scale)
             sns.boxplot(
                 x='method',
-                y='processing_time_log',
+                y='processing_time_ms',
                 data=self.df,
                 palette=self.method_colors,
-                width=0.6,
                 ax=ax
             )
 
@@ -241,7 +233,7 @@ class HRFVisualizer:
             if show_points:
                 sns.stripplot(
                     x='method',
-                    y='processing_time_log',
+                    y='processing_time_ms',
                     data=self.df,
                     color='black',
                     size=3,
@@ -250,30 +242,29 @@ class HRFVisualizer:
                     ax=ax
                 )
 
-            # Create custom y-tick labels (convert from log back to original scale)
-            log_ticks = ax.get_yticks()
-            ax.set_yticklabels([f"{10**y:.0f}" for y in log_ticks])
+            # Set logarithmic scale for processing time
+            ax.set_yscale('log')
 
             # Set labels and title
-            ax.set_xlabel('')
+            ax.set_title('Processing Time')
+            ax.set_xlabel('Method')
             ax.set_ylabel('Processing Time (ms, log scale)')
-            ax.set_title('Processing Time', fontweight='bold')
+            ax.grid(True, alpha=0.3)
 
             # Add statistical annotations
-            self._add_statistical_annotations(ax, self.df, 'processing_time_log')
+            self._add_statistical_annotations(ax, self.df, 'processing_time_ms')
 
-        # Remove any unused subplots
-        for i in range(len(self.metrics) + 1, len(axes)):
-            fig.delaxes(axes[i])
+        # Remove empty subplot
+        if len(self.metrics) + 1 < len(axes):
+            fig.delaxes(axes[-1])
 
-        # Adjust layout
+        # Adjust layout - similar to hrf_analysis.py
+        plt.suptitle('Distribution of Evaluation Metrics by Method', fontsize=12)
         plt.tight_layout()
-        fig.subplots_adjust(top=0.95)
-        fig.suptitle('Comparison of Illumination Correction Methods', fontsize=14, fontweight='bold')
 
         # Save figure
         output_path = self.output_dir / 'quality_metrics_boxplots.pdf'
-        plt.savefig(output_path, bbox_inches='tight')
+        plt.savefig(output_path)
         plt.close()
 
         return str(output_path)
@@ -293,23 +284,21 @@ class HRFVisualizer:
         # Create figure
         fig, ax = plt.subplots(figsize=(8, 6))
 
-        # Create bar chart
+        # Create bar chart (sem barras de erro)
         bars = ax.bar(
             time_stats['method'],
             time_stats['mean'],
-            yerr=time_stats['std'],
             color=[self.method_colors[m] for m in time_stats['method']],
-            capsize=5,
             alpha=0.8,
-            ecolor='black'
+            width=0.7
         )
 
-        # Add value labels on top of bars
+        # Add value labels 0.5 acima da barra
         for bar in bars:
             height = bar.get_height()
             ax.text(
                 bar.get_x() + bar.get_width()/2.,
-                height + time_stats['std'].max() * 0.2,
+                height + 0.6,
                 f'{height:.1f}',
                 ha='center',
                 va='bottom',
@@ -317,82 +306,114 @@ class HRFVisualizer:
             )
 
         # Set labels and title
-        ax.set_xlabel('Illumination Correction Method', fontsize=11)
-        ax.set_ylabel('Processing Time (ms)', fontsize=11)
-        ax.set_title('Average Processing Time by Method', fontsize=12, fontweight='bold')
+        ax.set_xlabel('Method')
+        ax.set_ylabel('Processing Time (ms)')
+        ax.set_title('Average Processing Time by Method')
 
         # Add grid for readability
         ax.grid(axis='y', alpha=0.3)
 
         # Improve y-axis formatting based on data scale
         if time_stats['mean'].max() > 1000:
-            # Use logarithmic scale for large time differences
             ax.set_yscale('log')
-            ax.set_ylabel('Processing Time (ms, log scale)', fontsize=11)
+            ax.set_ylabel('Processing Time (ms, log scale)')
+            ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda y, _: '{:,.0f}'.format(y)))
+            plt.subplots_adjust(left=0.15)
 
-        # Perform statistical test
-        if len(self.df['method'].unique()) >= 2:
-            f_stat, p_value = stats.f_oneway(
-                *[self.df[self.df['method'] == method]['processing_time_ms'].values
-                  for method in self.df['method'].unique()]
-            )
-
-            p_text = f"p < 0.0001" if p_value < 0.0001 else f"p = {p_value:.4f}"
-            ax.text(0.5, 0.02, f"ANOVA: {p_text}", transform=ax.transAxes,
-                    ha='center', fontsize=9, style='italic')
+        plt.tight_layout()
 
         # Save figure
-        output_path = self.output_dir / 'processing_time_comparison.pdf'
-        plt.savefig(output_path, bbox_inches='tight')
+        output_path = self.output_dir / 'processing_time_analysis.pdf'
+        plt.savefig(output_path)
         plt.close()
 
         return str(output_path)
 
     def create_radar_chart(self) -> str:
         """
-        Create a radar chart comparing methods across all metrics.
+        Create a radar chart comparing methods across all metrics with improved symmetry
+        and matching font style with processing_time_analysis.pdf.
+        """
+        radar_data = self.df.groupby('method')[self.metrics].mean().reset_index()
+        num_metrics = len(self.metrics)
+        angles = np.linspace(0, 2 * np.pi, num_metrics, endpoint=False).tolist()
+        angles += angles[:1]  # Close the loop
+
+        # Create figure
+        fig, ax = plt.subplots(figsize=(10, 10), subplot_kw=dict(polar=True))
+
+        # Plot each method
+        for method in radar_data['method']:
+            values = radar_data[radar_data['method'] == method][self.metrics].values.flatten().tolist()
+            values += values[:1]
+            ax.plot(angles, values, 'o-', linewidth=2.5, label=method, color=self.method_colors[method])
+            ax.fill(angles, values, alpha=0.1, color=self.method_colors[method])
+
+        # Set metric labels using built-in positioning
+        ax.set_xticks(angles[:-1])
+
+        # Ajuste da fonte para corresponder ao processing_time_analysis.pdf
+        ax.set_xticklabels([self.metric_labels[m] for m in self.metrics],
+                           fontsize=10,
+                           fontfamily='serif')
+
+        # Improve radial axis with matching font style
+        max_value = max([radar_data[metric].max() for metric in self.metrics]) * 1.2
+        ax.set_ylim(0, max_value)
+        ax.set_yticks([0.2, 0.4, 0.6, 0.8, 1.0])
+        ax.set_yticklabels(['0.2', '0.4', '0.6', '0.8', '1.0'],
+                           color='gray',
+                           fontsize=8,
+                           fontfamily='serif')
+
+        ax.set_rlabel_position(0)  # Radial labels position
+
+        # Add grid and legend with matching font style
+        ax.grid(True, alpha=0.3)
+        legend = ax.legend(loc='upper right', bbox_to_anchor=(0.15, 0.15))
+
+        # Ajuste da fonte da legenda
+        plt.setp(legend.get_texts(), fontsize=9, fontfamily='serif')
+
+        # Título com a mesma fonte
+        plt.title('Performance Comparison Across All Metrics',
+                  y=1.05,
+                  fontsize=11,
+                  fontfamily='serif')
+
+        plt.tight_layout()
+
+        output_path = self.output_dir / 'radar_chart_comparison.pdf'
+        plt.savefig(output_path)
+        plt.close()
+        return str(output_path)
+
+    def create_correlation_heatmap(self) -> str:
+        """
+        Create correlation heatmap of metrics, similar to the one in hrf_analysis.py
 
         Returns:
         --------
         str
             Path to saved figure
         """
-        # Calculate mean of each metric for each method
-        radar_data = self.df.groupby('method')[self.metrics].mean().reset_index()
+        # Prepare data
+        metrics_df = self.df[self.metrics]
+        correlation_matrix = metrics_df.corr()
 
-        # Number of metrics
-        num_metrics = len(self.metrics)
+        # Create figure
+        fig, ax = plt.subplots(figsize=(8, 6))
 
-        # Angle for each metric
-        angles = np.linspace(0, 2 * np.pi, num_metrics, endpoint=False).tolist()
-        angles += angles[:1]  # Close the loop
+        # Create heatmap - exatamente como no hrf_analysis.py
+        sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0,
+                   square=True, linewidths=0.5, cbar_kws={"shrink": 0.8}, ax=ax)
 
-        # Setup figure
-        fig, ax = plt.subplots(figsize=(8, 8), subplot_kw=dict(polar=True))
-
-        # Add each method
-        for method in radar_data['method']:
-            values = radar_data[radar_data['method'] == method][self.metrics].values.flatten().tolist()
-            values += values[:1]  # Close the loop
-
-            # Plot method
-            ax.plot(angles, values, 'o-', linewidth=2, label=method, color=self.method_colors[method])
-            ax.fill(angles, values, alpha=0.1, color=self.method_colors[method])
-
-        # Set metric labels
-        ax.set_xticks(angles[:-1])
-        ax.set_xticklabels([self.metric_labels[m] for m in self.metrics])
-
-        # Style radar chart
-        ax.grid(True, alpha=0.3)
-        plt.legend(loc='upper right', bbox_to_anchor=(0.1, 0.1))
-
-        # Title
-        plt.title('Performance Comparison Across All Metrics', size=12, fontweight='bold', y=1.08)
+        ax.set_title('Correlation Matrix of Evaluation Metrics')
+        plt.tight_layout()
 
         # Save figure
-        output_path = self.output_dir / 'radar_chart_comparison.pdf'
-        plt.savefig(output_path, bbox_inches='tight')
+        output_path = self.output_dir / 'correlation_heatmap.pdf'
+        plt.savefig(output_path)
         plt.close()
 
         return str(output_path)
@@ -407,20 +428,20 @@ class HRFVisualizer:
             Path to saved figure
         """
         # Create figure with grid layout
-        fig = plt.figure(figsize=(12, 14))
-        gs = GridSpec(3, 2, figure=fig)
+        fig = plt.figure(figsize=(12, 10))
+        gs = GridSpec(2, 2, figure=fig)
 
-        # Top row: Processing time and radar chart
+        # Top left: Processing time
         ax_time = fig.add_subplot(gs[0, 0])
+
+        # Top right: Radar chart
         ax_radar = fig.add_subplot(gs[0, 1], polar=True)
 
-        # Middle and bottom rows: Quality metrics
-        axes_metrics = [
-            fig.add_subplot(gs[1, 0]),
-            fig.add_subplot(gs[1, 1]),
-            fig.add_subplot(gs[2, 0]),
-            fig.add_subplot(gs[2, 1])
-        ]
+        # Bottom left: Correlation heatmap
+        ax_corr = fig.add_subplot(gs[1, 0])
+
+        # Bottom right: Quality metrics
+        ax_quality = fig.add_subplot(gs[1, 1])
 
         # 1. Processing time (logarithmic scale)
         time_stats = self.df.groupby('method')['processing_time_ms'].agg(['mean', 'std']).reset_index()
@@ -437,7 +458,9 @@ class HRFVisualizer:
         # Log scale for processing time
         ax_time.set_yscale('log')
         ax_time.set_ylabel('Processing Time (ms, log scale)')
-        ax_time.set_title('Processing Time Comparison', fontweight='bold')
+        ax_time.set_xlabel('Method')
+        ax_time.set_title('Processing Time Comparison')
+        ax_time.grid(axis='y', alpha=0.3)
 
         # 2. Radar chart
         radar_data = self.df.groupby('method')[self.metrics].mean().reset_index()
@@ -452,86 +475,98 @@ class HRFVisualizer:
 
         ax_radar.set_xticks(angles[:-1])
         ax_radar.set_xticklabels([m.split('_')[0].capitalize() for m in self.metrics], fontsize=8)
-        ax_radar.set_title('Multi-Metric Performance', fontweight='bold')
+
+        # Adjust labels position
+        for label, angle in zip(ax_radar.get_xticklabels(), angles[:-1]):
+            if angle < np.pi/2 or angle > 3*np.pi/2:
+                label.set_horizontalalignment('left')
+                label.set_position((1.3*np.cos(angle), 1.3*np.sin(angle)))
+            else:
+                label.set_horizontalalignment('right')
+                label.set_position((1.3*np.cos(angle), 1.3*np.sin(angle)))
+
+        ax_radar.set_title('Multi-Metric Performance')
         ax_radar.legend(loc='upper right', bbox_to_anchor=(0.1, 0.1))
+        ax_radar.grid(True, alpha=0.3)
 
-        # 3. Quality metrics box plots (select the 4 most important metrics)
-        key_metrics = self.metrics[:4]  # First 4 metrics
+        # 3. Correlation heatmap
+        correlation_matrix = self.df[self.metrics].corr()
+        sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0,
+                   square=True, linewidths=0.5, cbar_kws={"shrink": 0.8}, ax=ax_corr)
+        ax_corr.set_title('Correlation Matrix')
 
-        for i, metric in enumerate(key_metrics):
-            ax = axes_metrics[i]
+        # 4. Quality composite score
+        # Create a composite quality score
+        quality_metrics = ['contrast_ratio', 'vessel_clarity_index', 'microaneurysm_visibility']
+        self.df['quality_score'] = self.df[quality_metrics].mean(axis=1)
 
-            # Box plot
-            sns.boxplot(
-                x='method',
-                y=metric,
-                data=self.df,
-                palette=self.method_colors,
-                width=0.6,
-                ax=ax
-            )
+        # Create boxplot of quality score
+        sns.boxplot(
+            x='method',
+            y='quality_score',
+            data=self.df,
+            palette=self.method_colors,
+            hue='method',  # Adicionado o parâmetro hue
+            legend=False,  # Desativa a legenda para evitar duplicação
+            ax=ax_quality
+        )
 
-            # Add individual points
-            sns.stripplot(
-                x='method',
-                y=metric,
-                data=self.df,
-                color='black',
-                size=2,
-                alpha=0.3,
-                jitter=True,
-                ax=ax
-            )
+        # Add points
+        sns.stripplot(
+            x='method',
+            y='quality_score',
+            data=self.df,
+            color='black',
+            size=3,
+            alpha=0.4,
+            jitter=True,
+            ax=ax_quality
+        )
 
-            # Set labels
-            ax.set_xlabel('')
-            ax.set_ylabel(self.metric_labels[metric])
-            ax.set_title(self.metric_labels[metric], fontweight='bold')
+        ax_quality.set_title('Composite Quality Score')
+        ax_quality.set_xlabel('Method')
+        ax_quality.set_ylabel('Score')
+        ax_quality.grid(True, alpha=0.3)
 
-            # Add statistical annotations if applicable
-            self._add_statistical_annotations(ax, self.df, metric)
+        # Add statistical annotations
+        self._add_statistical_annotations(ax_quality, self.df, 'quality_score')
 
         # Main title
         fig.suptitle('Comprehensive Analysis of HRF Illumination Correction Methods',
-                    fontsize=14, fontweight='bold', y=0.98)
+                    fontsize=12)
 
         # Adjust layout
         plt.tight_layout()
-        fig.subplots_adjust(top=0.94)
+        fig.subplots_adjust(top=0.92)
 
         # Save figure
         output_path = self.output_dir / 'comprehensive_analysis_grid.pdf'
-        plt.savefig(output_path, bbox_inches='tight')
+        plt.savefig(output_path)
         plt.close()
 
         return str(output_path)
 
     def generate_all_visualizations(self) -> Dict[str, str]:
         """
-        Generate all visualizations and return their file paths.
-
-        Returns:
-        --------
-        Dict[str, str]
-            Dictionary mapping visualization names to file paths
+        Generate selected visualizations and return their file paths.
         """
-        print("Generating box plots for quality metrics...")
-        boxplots_path = self.create_boxplots()
+        # print("Generating box plots for quality metrics...")
+        # boxplots_path = self.create_boxplots()  # Removido
 
         print("Generating processing time bar chart...")
         time_chart_path = self.create_processing_time_barchart()
 
+        print("Generating correlation heatmap...")
+        heatmap_path = self.create_correlation_heatmap()
+
         print("Generating radar chart comparison...")
         radar_chart_path = self.create_radar_chart()
 
-        print("Generating comprehensive summary grid...")
-        summary_grid_path = self.create_summary_grid()
-
         return {
-            "quality_metrics_boxplots": boxplots_path,
+            # "quality_metrics_boxplots": boxplots_path,  # Removido
             "processing_time_chart": time_chart_path,
-            "radar_chart": radar_chart_path,
-            "summary_grid": summary_grid_path
+            "correlation_heatmap": heatmap_path,
+            "radar_chart": radar_chart_path
         }
 
 
