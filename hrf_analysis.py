@@ -513,7 +513,7 @@ class AcademicVisualizerEnhanced:
                                   if r['image_id'] == image_id and r['method'] == 'original'), None)
             if original_result and 'image' in original_result:
                 axes[i, 0].imshow(cv2.cvtColor(original_result['image'], cv2.COLOR_BGR2RGB))
-                axes[i, 0].set_title('Original' if i == 0 else '')
+                axes[i, 0].set_title('ORIGINAL' if i == 0 else '', fontsize=16)
                 axes[i, 0].axis('off')
 
             # Processed images with metrics
@@ -529,16 +529,21 @@ class AcademicVisualizerEnhanced:
                         if 'psnr' in metrics and 'ssim' in metrics:
                             text = f"PSNR: {metrics['psnr']:.1f}\nSSIM: {metrics['ssim']:.3f}"
                         else:
-                            text = f"Contrast: {metrics.get('contrast_ratio', 0):.3f}"
+                            text = f"CONTRAST: {metrics.get('contrast_ratio', 0):.3f}"
 
-                        axes[i, j+1].text(0.02, 0.98, text, transform=axes[i, j+1].transAxes,
-                                         fontsize=8, verticalalignment='top',
-                                         bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
+                        # Texto em caixa alta e fonte 16
+                        text = text.upper()
+                        axes[i, j+1].text(
+                            0.02, 0.98, text, transform=axes[i, j+1].transAxes,
+                            fontsize=16, verticalalignment='top',
+                            bbox=dict(boxstyle='round', facecolor='white', alpha=0.8)
+                        )
 
-                    axes[i, j+1].set_title(method if i == 0 else '')
+                    axes[i, j+1].set_title(method.upper() if i == 0 else '', fontsize=16)
                     axes[i, j+1].axis('off')
 
-        plt.suptitle('Enhanced Visual Comparison of Illumination Correction Methods', fontsize=16)
+        # Remover o título geral da figura
+        # plt.suptitle('Enhanced Visual Comparison of Illumination Correction Methods', fontsize=16)
         plt.tight_layout()
 
         output_path = output_dir / 'enhanced_comparison_grid.pdf'

@@ -1,8 +1,8 @@
 Metric,Statistical_Power,Effect_Size,Effect_Interpretation,Sample_Adequate
-Psnr,1.0,12.991827912126334,Large,Yes
-Ssim,1.0,8.39069717844273,Large,Yes
-Contrast Ratio,1.0,12.405653841280758,Large,Yes
-Vessel Clarity Index,,3.4402720366596844,Large,No
-Illumination Uniformity,1.0,-10.082489325867797,Large,Yes
-Edge Preservation Index,1.0,12.85799184035307,Large,Yes
-Microaneurysm Visibility,1.0,-11.25148606690372,Large,Yes
+Psnr,0.9999999999984553,13.623745100530973,Large,Yes
+Ssim,0.999999999996742,13.435160920873274,Large,Yes
+Contrast Ratio,1.0,20.05905599064003,Large,Yes
+Vessel Clarity Index,,5.855688469546421,Large,No
+Illumination Uniformity,0.9999999970582637,-11.574499690101652,Large,Yes
+Edge Preservation Index,,10.26559073593518,Large,No
+Microaneurysm Visibility,1.0,-28.104771971585418,Large,Yes

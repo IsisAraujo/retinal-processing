@@ -66,7 +66,7 @@ class HRFExperimentEnhanced:
         """Create enhanced directory structure for results"""
         directories = [
             'figures', 'tables', 'data', 'logs',
-            'power_analysis', 'cross_validation', 'parameter_docs'
+            'power_analysis', 'parameter_docs'
         ]
         for dir_name in directories:
             (self.output_dir / dir_name).mkdir(parents=True, exist_ok=True)
@@ -288,6 +288,16 @@ class HRFExperimentEnhanced:
         # Create comprehensive report
         self._generate_comprehensive_report()
 
+        # Ao final, execute o visualizador para gerar as figuras acadêmicas
+        try:
+            from hrf_visualizer import AcademicVisualizationGenerator
+            print("\nExecutando geração de figuras acadêmicas adicionais...")
+            visualizer = AcademicVisualizationGenerator(data_dir=".")
+            visualizer.generate_all_figures()
+            print("✓ Figuras acadêmicas adicionais geradas com sucesso.")
+        except Exception as e:
+            logger.error(f"Erro ao gerar figuras acadêmicas adicionais: {str(e)}")
+
     def _perform_enhanced_analysis(self):
         """Perform enhanced statistical analysis with FDR correction"""
         analyzer = EnhancedStatisticalAnalyzer()
@@ -349,14 +359,7 @@ class HRFExperimentEnhanced:
         try:
             # 1. Enhanced visual comparison grid
             visualizer.create_enhanced_comparison_grid(self.results, self.output_dir / 'figures')
-
-            # 2. Enhanced performance scatter plot
-            analyzer.create_performance_scatter(df, self.output_dir / 'figures')
-
-            # 3. Enhanced correlation heatmap
-            analyzer.create_enhanced_heatmap(df, self.output_dir / 'figures')
-
-            # 4. Method ranking chart
+            # 2. Method ranking chart
             visualizer.create_method_ranking_chart(df, self.output_dir / 'figures')
 
             logger.info("Enhanced visualizations completed")
