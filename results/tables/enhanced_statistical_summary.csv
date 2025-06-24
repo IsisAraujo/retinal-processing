@@ -1,0 +1,8 @@
+Metric,Test,Statistic,P_Value,Bonferroni_P,FDR_P,Significant_Bonferroni,Significant_FDR,Effect_Size,Effect_Interpretation,Statistical_Power
+Psnr,Kruskal-Wallis H-test,151.205,0.0000,0.0000,0.0000,Yes,Yes,12.992,Large,1.000
+Ssim,Kruskal-Wallis H-test,141.098,0.0000,0.0000,0.0000,Yes,Yes,8.391,Large,1.000
+Contrast Ratio,Kruskal-Wallis H-test,151.319,0.0000,0.0000,0.0000,Yes,Yes,12.406,Large,1.000
+Vessel Clarity Index,Kruskal-Wallis H-test,144.819,0.0000,0.0000,0.0000,Yes,Yes,3.440,Large,nan
+Illumination Uniformity,Kruskal-Wallis H-test,150.401,0.0000,0.0000,0.0000,Yes,Yes,-10.082,Large,1.000
+Edge Preservation Index,Kruskal-Wallis H-test,145.553,0.0000,0.0000,0.0000,Yes,Yes,12.858,Large,1.000
+Microaneurysm Visibility,Kruskal-Wallis H-test,145.228,0.0000,0.0000,0.0000,Yes,Yes,-11.251,Large,1.000

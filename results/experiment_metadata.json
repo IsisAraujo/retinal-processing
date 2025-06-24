@@ -1,0 +1,35 @@
+{
+  "start_time": "2025-06-17 13:45:07",
+  "sample_size_requested": null,
+  "methods_tested": [
+    "CLAHE",
+    "SSR",
+    "MSR",
+    "MSRCR"
+  ],
+  "metrics_calculated": [
+    "psnr",
+    "ssim",
+    "contrast_ratio",
+    "vessel_clarity_index",
+    "illumination_uniformity",
+    "edge_preservation_index",
+    "microaneurysm_visibility"
+  ],
+  "statistical_corrections": [
+    "bonferroni",
+    "benjamini_hochberg_fdr"
+  ],
+  "improvements_implemented": [
+    "FDR correction instead of Bonferroni-only",
+    "Standard image quality metrics (PSNR, SSIM)",
+    "Corrected Frangi filter parameters (c=15)",
+    "Power analysis",
+    "Enhanced visualization"
+  ],
+  "actual_sample_size": 45,
+  "total_processing_time_seconds": 5293.082952260971,
+  "successful_images": 45,
+  "failed_images": 0,
+  "end_time": "2025-06-17 15:13:21"
+}

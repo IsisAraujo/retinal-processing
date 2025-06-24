@@ -1,116 +1,166 @@
-# Comparative Analysis of Model-Based Illumination Correction Methods for High-Resolution Fundus Images
+# HRF Illumination Correction Analysis - Referências e Citações
 
-## Research Gap
+## Versão Aprimorada do Projeto
 
-This implementation addresses the lack of systematic comparison of model-based illumination correction methods specifically optimized for high-resolution fundus (HRF) images, using ophthalmology-specific metrics rather than generic image quality measures.
+Este projeto implementa uma análise comparativa rigorosa de métodos de correção de iluminação em imagens de fundo de olho, seguindo padrões acadêmicos atuais (2024-2025).
 
-## Academic Implementation
+## Principais Melhorias Implementadas
 
-### Architecture
+### 1. Correções Metodológicas Críticas
 
-```
-hrf_core.py         - Core data structures and constants
-hrf_methods.py      - Illumination correction algorithms (CLAHE, SSR, MSR, MSRCR)
-hrf_metrics.py      - Ophthalmology-specific evaluation metrics
-hrf_analysis.py     - Statistical analysis and visualization
-hrf_experiment.py   - Main experimental pipeline
-```
+- **Correção FDR Benjamini-Hochberg** em lugar da correção Bonferroni excessivamente conservadora
+- **Parâmetros do filtro de Frangi corrigidos** (c=15 em vez de 500, seguindo literatura padrão)
+- **Métricas padrão IEEE adicionadas** (PSNR, SSIM)
+- **Análise de poder estatístico** implementada
 
-### Key Features
+### 2. Conformidade Acadêmica
 
-1. **Ophthalmology-Specific Metrics** (replacing inadequate PSNR/SSIM):
+- Referências reais da literatura utilizadas (não inventadas)
+- Documentação completa de parâmetros com citações
+- Análise estatística rigorosa seguindo padrões atuais
+- Visualizações aprimoradas para publicação
 
-   - Weber Contrast Ratio
-   - Vessel Clarity Index (Frangi-based)
-   - Illumination Uniformity
-   - Edge Preservation Index
-   - Microaneurysm Visibility
+## Referências Bibliográficas Utilizadas
 
-2. **Rigorous Statistical Analysis**:
+### Métricas de Qualidade de Imagem (Padrão IEEE)
 
-   - Shapiro-Wilk normality tests
-   - Levene's homoscedasticity test
-   - ANOVA/Kruskal-Wallis with post-hoc tests
-   - Bonferroni correction for multiple comparisons
-   - Effect size calculation (Cohen's d)
+1. **Wang, Z., Bovik, A. C., Sheikh, H. R., & Simoncelli, E. P. (2004)**
+   - _Image quality assessment: From error visibility to structural similarity_
+   - IEEE Transactions on Image Processing, 13(4), 600-612
+   - **Aplicação**: Implementação das métricas PSNR e SSIM
+   - **Link**: https://ece.uwaterloo.ca/~z70wang/publications/ssim.pdf
+   - **DOI**: 10.1109/TIP.2003.819861
 
-3. **Publication-Ready Outputs**:
-   - LaTeX tables
-   - PDF figures (300 DPI)
-   - Statistical summary reports
-   - Visual comparison grids
+### Correção Estatística para Múltiplos Testes
 
-## Usage
+2. **Benjamini, Y., & Hochberg, Y. (1995)**
+   - _Controlling the false discovery rate: a practical and powerful approach to multiple testing_
+   - Journal of the Royal Statistical Society: Series B (Methodological), 57(1), 289-300
+   - **Aplicação**: Implementação da correção FDR em substituição ao Bonferroni
+   - **Link**: https://www.jstor.org/stable/2346101
+   - **DOI**: 10.1111/j.2517-6161.1995.tb02031.x
 
-### Installation
+### Filtro de Frangi para Segmentação Vascular
 
-```bash
-pip install -r requirements.txt
-```
+3. **Frangi, A. F., Niessen, W. J., Vincken, K. L., & Viergever, M. A. (1998)**
+   - _Multiscale vessel enhancement filtering_
+   - MICCAI 1998, Lecture Notes in Computer Science, vol 1496
+   - **Aplicação**: Parâmetros corretos para o filtro de detecção vascular (c=15)
+   - **Link**: https://link.springer.com/chapter/10.1007/BFb0056195
+   - **DOI**: 10.1007/BFb0056195
 
-### Running the Experiment
+### Métodos CLAHE para Imagens de Retina
 
-```bash
-# Full dataset analysis
-python hrf_experiment.py /path/to/hrf/dataset --output_dir results
+4. **Alwazzan, M. J., Ismael, M. A., & Ahmed, A. N. (2021)**
+   - _A hybrid algorithm to enhance colour retinal fundus images using a wiener filter and clahe_
+   - Journal of Digital Imaging, 34(3), 750-759
+   - **Aplicação**: Parâmetros otimizados para CLAHE (clip_limit=3.0, tile_grid=(8,8))
+   - **Link**: https://pubmed.ncbi.nlm.nih.gov/34291375/
+   - **DOI**: 10.1007/s10278-021-00567-8
 
-# Quick test with 10 images
-python hrf_experiment.py /path/to/hrf/dataset --sample_size 10
-```
+### Implementações OpenCV
 
-### Expected Outputs
+5. **OpenCV Development Team**
 
-```
-results/
-├── figures/
-│   ├── comparison_grid.pdf
-│   ├── metrics_boxplots.pdf
-│   ├── performance_analysis.pdf
-│   └── correlation_heatmap.pdf
-├── tables/
-│   ├── statistical_summary.csv
-│   └── statistical_summary.tex
-├── data/
-│   ├── metrics_results.json
-│   ├── results_dataframe.csv
-│   └── statistical_analysis.json
-└── ANALYSIS_REPORT.md
-```
+   - _OpenCV: Histograms - 2: Histogram Equalization_
+   - **Aplicação**: Implementação de PSNR e SSIM
+   - **Link**: https://docs.opencv.org/4.x/d5/daf/tutorial_py_histogram_equalization.html
 
-## Theoretical Foundation
+6. **PyImageSearch - Adrian Rosebrock**
+   - _OpenCV Histogram Equalization and Adaptive Histogram Equalization (CLAHE)_
+   - **Aplicação**: Implementação e validação de parâmetros CLAHE
+   - **Link**: https://pyimagesearch.com/2021/02/01/opencv-histogram-equalization-and-adaptive-histogram-equalization-clahe/
 
-### Illumination Model
+### Bibliotecas Python para Análise Estatística
 
-Based on the Retinex theory (Land & McCann, 1971):
+7. **SciPy Development Team**
 
-```
-I(x,y) = L(x,y) × R(x,y)
-```
+   - _SciPy.stats.false_discovery_control_
+   - **Aplicação**: Implementação da correção FDR
+   - **Link**: https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.false_discovery_control.html
 
-where I is the observed image, L is illumination, and R is reflectance.
+8. **Scikit-Image Development Team**
+   - _skimage.metrics - Peak Signal-to-Noise Ratio and Structural Similarity_
+   - **Aplicação**: Implementação de PSNR e SSIM
+   - **Link**: https://scikit-image.org/docs/0.24.x/api/skimage.metrics.html
 
-### Method Parameters (Optimized for HRF)
+### Análise de Poder Estatístico
 
-- **CLAHE**: clip_limit=3.0, tile_size=16×16
-- **SSR**: σ=250 (global illumination)
-- **MSR**: σ=[15, 80, 250] (multi-scale)
-- **MSRCR**: Color restoration with α=125, β=46
+9. **Cohen, J. (1988)**
+   - _Statistical power analysis for the behavioral sciences_
+   - Lawrence Erlbaum Associates
+   - **Aplicação**: Cálculo de tamanho de efeito e poder estatístico
+   - **ISBN**: 0-8058-0283-5
 
-## References
+### Datasets e Benchmarks
 
-Key literature (2021-2025):
+10. **Papers with Code - HRF Dataset**
+    - _High-Resolution Fundus Image Database_
+    - **Aplicação**: Validação do dataset utilizado
+    - **Link**: https://paperswithcode.com/dataset/hrf
 
-- Kumar et al. (2024): "Microaneurysm detection in diabetic retinopathy"
-- Li et al. (2024): "Automated vessel analysis in fundus images"
-- Zhang et al. (2024): "Optimal Retinex parameters for fundus imaging"
-- Singh et al. (2023): "Illumination assessment in fundus photography"
-- Zhao et al. (2023): "Contrast metrics for retinal imaging"
+### Diretrizes para Análise de Imagens Médicas
 
-## Compliance
+11. **Editage Insights (2024)**
+    - _Statistical approaches for analyzing imaging data: An overview_
+    - **Aplicação**: Diretrizes para análise estatística em imagens médicas
+    - **Link**: https://www.editage.com/insights/statistical-approaches-for-analyzing-imaging-data-an-overview
 
-This implementation follows:
+## Implementações de Referência
 
-- IEEE/ACM code quality standards
-- Reproducible research guidelines
-- FAIR data principles
-- Medical imaging best practices
+### Repositórios GitHub Consultados
+
+12. **aizvorski/video-quality**
+
+    - _Video quality metrics, reference implementation in python: VIF, SSIM, PSNR_
+    - **Link**: https://github.com/aizvorski/video-quality
+    - **Aplicação**: Validação de implementações PSNR/SSIM
+
+13. **dongb5/Retinex**
+    - _Python implementation of multi scale retinex with color restoration_
+    - **Link**: https://github.com/dongb5/Retinex
+    - **Aplicação**: Validação de parâmetros MSR/MSRCR
+
+## Artigos Relacionados ao Projeto Original
+
+### Referências do Artigo Base
+
+14. **Tian et al. (2021)**
+
+    - _Blood Vessel Segmentation of Fundus Retinal Images Based on Improved Frangi and Mathematical Morphology_
+    - Journal: Computational and Mathematical Methods in Medicine
+    - **DOI**: 10.1155/2021/4761517
+
+15. **Yang et al. (2020)**
+
+    - _Frangi based multi-scale level sets for retinal vascular segmentation_
+    - Journal: Computer Methods and Programs in Biomedicine
+    - **DOI**: 10.1016/j.cmpb.2020.105752
+
+16. **Mahapatra et al. (2022)**
+    - _A novel framework for retinal vessel segmentation using optimal improved frangi filter_
+    - Journal: Computers in Biology and Medicine
+    - **DOI**: 10.1016/j.compbiomed.2022.105770
+
+## Tutoriais e Documentações Técnicas
+
+### PSNR e SSIM
+
+17. **GeeksforGeeks**
+    - _Python | Peak Signal-to-Noise Ratio (PSNR)_
+    - **Link**: https://www.geeksforgeeks.org/python/python-peak-signal-to-noise-ratio-psnr/
+    - **Data**: Janeiro 2020
+
+### Correção FDR
+
+18. **R-bloggers**
+
+    - _The Benjamini-Hochberg procedure (FDR) and P-Value Adjusted Explained_
+    - **Link**: https://www.r-bloggers.com/2023/07/the-benjamini-hochberg-procedure-fdr-and-p-value-adjusted-explained/
+    - **Data**: Julho 2023
+
+19. **Statistics How To** - _Benjamini-Hochberg Procedure_ - **Link**: https://www.statisticshowto.com/benjamini-hochberg-procedure/ - **Data**: Outubro 2024
+
+        "retinal components are more intense in the fundus image's green channel"
+
+    Fonte: Interactive Blood Vessel Segmentation from Retinal Fundus Image Based on Canny Edge Detector (2021). PMC8512020

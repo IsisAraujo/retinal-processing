@@ -1,6 +1,5 @@
 """
 Implementation of model-based illumination correction methods
-Optimized parameters based on literature review (2021-2025)
 """
 
 import cv2
@@ -12,7 +11,6 @@ from hrf_utils import calculate_gaussian_kernel_size, normalize_reflectance, con
 class CLAHEMethod(IlluminationMethod):
     """
     Contrast Limited Adaptive Histogram Equalization
-    Parameters optimized for retinal imaging (Setiawan et al., 2023)
     """
 
     def __init__(self):
@@ -20,28 +18,27 @@ class CLAHEMethod(IlluminationMethod):
 
     def get_default_parameters(self) -> Dict:
         return {
-            'clip_limit': 3.0,  # Optimal for retinal vessels (Kumar et al., 2022)
-            'tile_grid_size': (16, 16)  # Balance between local and global enhancement
+            'clip_limit': 3.0,
+            'tile_grid_size': (8, 8)
         }
 
     def process(self, image: np.ndarray, clip_limit: float = 3.0,
-                tile_grid_size: tuple = (16, 16)) -> np.ndarray:
-        # Convert to LAB color space for luminance processing
-        lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
-        l_channel, a_channel, b_channel = cv2.split(lab)
+                tile_grid_size: tuple = (8, 8)) -> np.ndarray:  # Alterado default para (8, 8)
+        # Convert to HSV color space for processing (alterado de LAB para HSV)
+        hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+        h_channel, s_channel, v_channel = cv2.split(hsv)
 
-        # Apply CLAHE to luminance channel only
+        # Apply CLAHE to value channel only (alterado de l_channel para v_channel)
         clahe = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=tile_grid_size)
-        l_channel = clahe.apply(l_channel)
+        v_channel = clahe.apply(v_channel)
 
-        # Merge and convert back
-        lab = cv2.merge([l_channel, a_channel, b_channel])
-        return cv2.cvtColor(lab, cv2.COLOR_LAB2BGR)
+        # Merge and convert back (alterado de LAB para HSV)
+        hsv = cv2.merge([h_channel, s_channel, v_channel])
+        return cv2.cvtColor(hsv, cv2.COLOR_HSV2BGR)
 
 class SingleScaleRetinex(IlluminationMethod):
     """
     Single Scale Retinex (SSR) implementation
-    Based on Land & McCann (1971) with optimizations for fundus images
     """
 
     def __init__(self):
@@ -49,10 +46,13 @@ class SingleScaleRetinex(IlluminationMethod):
 
     def get_default_parameters(self) -> Dict:
         return {
-            'sigma': 250  # Optimal for HRF resolution (Zhang et al., 2024)
+            'sigma': 120,  # Alterado de 250 para 120
+            'gain': 1.2,   # Adicionado parâmetro gain
+            'offset': 0.1  # Adicionado parâmetro offset
         }
 
-    def process(self, image: np.ndarray, sigma: float = 250) -> np.ndarray:
+    def process(self, image: np.ndarray, sigma: float = 120,
+                gain: float = 1.2, offset: float = 0.1) -> np.ndarray:  # Alterados os defaults
         # Convert to float for precision and apply log
         log_img_float = convert_to_float_and_log(image)
 
@@ -64,6 +64,9 @@ class SingleScaleRetinex(IlluminationMethod):
         # Compute reflectance in log domain
         reflectance = log_img_float - log_illumination
 
+        # Apply gain and offset (alteração na aplicação dos novos parâmetros)
+        reflectance = gain * reflectance + offset
+
         # Normalize using percentile-based scaling
         reflectance = normalize_reflectance(reflectance)
 
@@ -72,7 +75,7 @@ class SingleScaleRetinex(IlluminationMethod):
 class MultiScaleRetinex(IlluminationMethod):
     """
     Multi-Scale Retinex (MSR) implementation
-    Scales selected for retinal vessel analysis (Wang et al., 2023)
+
     """
 
     def __init__(self):
@@ -80,10 +83,13 @@ class MultiScaleRetinex(IlluminationMethod):
 
     def get_default_parameters(self) -> Dict:
         return {
-            'sigmas': [15, 80, 250]  # Fine vessels, medium structures, global illumination
+            'sigmas': [15, 80, 200],  # Alterado de [15, 80, 250] para [15, 80, 200]
+            'gain': 1.5,              # Adicionado parâmetro gain
+            'offset': 0.05            # Adicionado parâmetro offset
         }
 
-    def process(self, image: np.ndarray, sigmas: List[float] = None) -> np.ndarray:
+    def process(self, image: np.ndarray, sigmas: List[float] = None,
+                gain: float = 1.5, offset: float = 0.05) -> np.ndarray:  # Adicionados novos parâmetros
         if sigmas is None:
             sigmas = self.get_default_parameters()['sigmas']
 
@@ -99,6 +105,9 @@ class MultiScaleRetinex(IlluminationMethod):
 
         msr_output /= len(sigmas)
 
+        # Apply gain and offset (alteração na aplicação dos novos parâmetros)
+        msr_output = gain * msr_output + offset
+
         # Normalize
         msr_output = normalize_reflectance(msr_output)
 
@@ -107,7 +116,6 @@ class MultiScaleRetinex(IlluminationMethod):
 class MultiScaleRetinexColorRestoration(IlluminationMethod):
     """
     MSRCR implementation with color restoration
-    Parameters from Zhou et al. (2022) for medical imaging
     """
 
     def __init__(self):
@@ -116,15 +124,18 @@ class MultiScaleRetinexColorRestoration(IlluminationMethod):
     def get_default_parameters(self) -> Dict:
         return {
             'sigmas': [15, 80, 250],
-            'alpha': 125,  # Color restoration strength
-            'beta': 46,    # Color restoration balance
-            'gain': 192,   # Overall gain
-            'offset': 30   # Offset for dynamic range
+            'alpha': 125,
+            'beta': 46,
+            'gain': 2.0,
+            'offset': 30,
+            'restoration_factor': 125, # Novo parâmetro
+            'color_gain': 2.5         # Novo parâmetro
         }
 
     def process(self, image: np.ndarray, sigmas: List[float] = None,
                 alpha: float = 125, beta: float = 46,
-                gain: float = 192, offset: float = 30) -> np.ndarray:
+                gain: float = 2.0, offset: float = 30,
+                restoration_factor: float = 125, color_gain: float = 2.5) -> np.ndarray:  # Adicionados novos parâmetros
         if sigmas is None:
             sigmas = self.get_default_parameters()['sigmas']
 
@@ -141,16 +152,14 @@ class MultiScaleRetinexColorRestoration(IlluminationMethod):
 
         msr_output /= len(sigmas)
 
-        # Color restoration
+        # Color restoration (utilização dos novos parâmetros)
         img_sum = np.sum(img_float, axis=2, keepdims=True)
-        color_restoration = beta * (np.log(alpha * img_float) - np.log(img_sum + 1e-6))
+        color_restoration = beta * (np.log(restoration_factor * img_float) - np.log(img_sum + 1e-6))
 
-        # Combine MSR with color restoration
-        msrcr = gain * (msr_output * color_restoration + offset)
+        # Combine MSR with color restoration (aplicação do color_gain)
+        msrcr = gain * (msr_output * color_restoration * color_gain + offset)
 
         # Clip to valid range
         msrcr = np.clip(msrcr, 0, 255).astype(np.uint8)
 
         return msrcr
-
-
