@@ -502,7 +502,7 @@ class AcademicVisualizerEnhanced:
         methods = ['CLAHE', 'SSR', 'MSR', 'MSRCR']
 
         fig, axes = plt.subplots(len(image_ids), len(methods) + 1,
-                                figsize=(18, 4 * len(image_ids)))
+                                figsize=(16, 4 * len(image_ids)))
 
         if len(image_ids) == 1:
             axes = axes.reshape(1, -1)
@@ -516,6 +516,17 @@ class AcademicVisualizerEnhanced:
                 axes[i, 0].set_title('ORIGINAL' if i == 0 else '', fontsize=16)
                 axes[i, 0].axis('off')
 
+                # Salvar imagem original individualmente como PNG
+                original_img = cv2.cvtColor(original_result['image'], cv2.COLOR_BGR2RGB)
+                img_filename = f"{image_id}_original.png"
+                plt.figure(figsize=(8, 8))
+                plt.imshow(original_img)
+                plt.axis('off')
+                plt.title('ORIGINAL', fontsize=16)
+                plt.tight_layout()
+                plt.savefig(output_dir / img_filename, format='png', dpi=300)
+                plt.close()
+
             # Processed images with metrics
             for j, method in enumerate(methods):
                 method_result = next((r for r in results
@@ -524,6 +535,7 @@ class AcademicVisualizerEnhanced:
                     axes[i, j+1].imshow(cv2.cvtColor(method_result['image'], cv2.COLOR_BGR2RGB))
 
                     # Add metrics as text overlay
+                    text = ""
                     if 'metrics' in method_result:
                         metrics = method_result['metrics']
                         if 'psnr' in metrics and 'ssim' in metrics:
@@ -541,6 +553,26 @@ class AcademicVisualizerEnhanced:
 
                     axes[i, j+1].set_title(method.upper() if i == 0 else '', fontsize=16)
                     axes[i, j+1].axis('off')
+
+                    # Salvar método individualmente como PNG
+                    method_img = cv2.cvtColor(method_result['image'], cv2.COLOR_BGR2RGB)
+                    img_filename = f"{image_id}_{method.lower()}.png"
+                    plt.figure(figsize=(8, 8))
+                    plt.imshow(method_img)
+                    plt.axis('off')
+                    plt.title(method.upper(), fontsize=16)
+
+                    # Adicionar também as métricas na figura individual
+                    if text:
+                        plt.text(
+                            0.02, 0.98, text, transform=plt.gca().transAxes,
+                            fontsize=16, verticalalignment='top',
+                            bbox=dict(boxstyle='round', facecolor='white', alpha=0.8)
+                        )
+
+                    plt.tight_layout()
+                    plt.savefig(output_dir / img_filename, format='png', dpi=300)
+                    plt.close()
 
         # Remover o título geral da figura
         # plt.suptitle('Enhanced Visual Comparison of Illumination Correction Methods', fontsize=16)

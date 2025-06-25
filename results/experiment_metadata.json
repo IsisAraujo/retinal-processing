@@ -1,5 +1,5 @@
 {
-  "start_time": "2025-06-24 19:41:52",
+  "start_time": "2025-06-24 20:57:17",
   "sample_size_requested": null,
   "methods_tested": [
     "CLAHE",
@@ -28,8 +28,8 @@
     "Enhanced visualization"
   ],
   "actual_sample_size": 3,
-  "total_processing_time_seconds": 765.8026359081268,
+  "total_processing_time_seconds": 741.1753015518188,
   "successful_images": 3,
   "failed_images": 0,
-  "end_time": "2025-06-24 19:54:38"
+  "end_time": "2025-06-24 21:09:39"
 }

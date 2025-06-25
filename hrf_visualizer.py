@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Academic Visualization Generator for Fundoscopic Image Enhancement Methods
-Generates publication-ready figures for scientific paper
+Generates publication-ready figures and tables for scientific paper
 """
 
 import pandas as pd
@@ -34,13 +34,15 @@ plt.rcParams.update({
 
 class AcademicVisualizationGenerator:
     """
-    Generates publication-ready visualizations for medical imaging research
+    Generates publication-ready visualizations and tables for medical imaging research.
     """
 
     def __init__(self, data_dir: str = "."):
         self.data_dir = Path(data_dir)
-        self.output_dir = Path("results/figures")  # Ajuste: saída para 'figures conforme hrf_experiment.py
-        self.output_dir.mkdir(exist_ok=True)
+        self.output_figures_dir = Path("results/figures") # Saída para figuras
+        self.output_tables_dir = Path("results/tables")   # Saída para tabelas
+        self.output_figures_dir.mkdir(exist_ok=True)
+        self.output_tables_dir.mkdir(exist_ok=True)
 
         # Academic color palette (colorblind-friendly)
         self.colors = {
@@ -119,8 +121,7 @@ class AcademicVisualizationGenerator:
                        ha='center', va='bottom', fontsize=11, fontweight='bold')
 
         plt.tight_layout()
-        # plt.savefig(self.output_dir / 'figure_1_method_comparison.pdf', dpi=300, bbox_inches='tight')  # Removido
-        plt.savefig(self.output_dir / 'figure_1_method_comparison.png', dpi=300, bbox_inches='tight')
+        plt.savefig(self.output_figures_dir / 'figure_1_method_comparison.png', dpi=300, bbox_inches='tight')
         plt.close()
 
         return "Figure 1: Comprehensive method comparison generated"
@@ -157,7 +158,7 @@ class AcademicVisualizationGenerator:
 
         ax.set_xlabel('Processing Time (ms)', fontweight='bold', fontsize=14)
         ax.set_ylabel('Composite Quality Score (0-1)', fontweight='bold', fontsize=14)
-        ax.set_title('Quality vs Computational Cost\n(Bottom-right is optimal)', fontweight='bold', fontsize=16)
+        ax.set_title('Quality vs Computational Cost\n(Lower Time and Higher Quality Score are Optimal)', fontweight='bold', fontsize=16)
         ax.set_xscale('log')
         ax.legend(fontsize=13, loc='best')
         ax.grid(True, alpha=0.3)
@@ -172,26 +173,217 @@ class AcademicVisualizationGenerator:
         msrcr_time = msrcr_data['processing_time_ms'].mean()
         efficiency_ratio = msrcr_time / clahe_time
 
-        # Ajuste: seta e texto um pouco mais à direita e maior para caber em uma linha só
         ax.annotate(
             f'CLAHE: {efficiency_ratio:.0f}x faster than MSRCR',
             xy=(clahe_time, clahe_data['quality_score'].mean()),
             xytext=(clahe_time * 2, 0.72),
-            arrowprops=dict(arrowstyle='->', color='blue', lw=2, shrinkA=8, shrinkB=8),  # shrinkA/B deixam a seta menor
+            arrowprops=dict(arrowstyle='->', color='blue', lw=2, shrinkA=8, shrinkB=8),
             fontsize=13, fontweight='bold',
             bbox=dict(boxstyle='round,pad=0.7', facecolor='lightblue', alpha=0.85)
         )
 
         plt.tight_layout()
-        plt.savefig(self.output_dir / 'figure_2_efficiency_analysis.png', dpi=300, bbox_inches='tight')
+        plt.savefig(self.output_figures_dir / 'figure_2_efficiency_analysis.png', dpi=300, bbox_inches='tight')
         plt.close()
 
         return "Figure 2: Efficiency vs Quality analysis generated"
 
+    def create_figure_3_p_value_table(self):
+        """
+        Generates a publication-ready p-value table with robust error handling
+        and symmetric design for academic papers.
+        """
+        metrics = sorted(self.stats['comparisons'].keys())
+        data = []
+
+        # Color coding scheme for significance levels
+        def get_color(p):
+            if np.isnan(p):
+                return 'white'
+            elif p <= 0.001:
+                return '#006400'  # Dark green (highly significant)
+            elif p <= 0.01:
+                return '#32CD32'  # Medium green (very significant)
+            elif p <= 0.05:
+                return '#FFD700'  # Gold (significant)
+            else:
+                return '#D3D3D3'  # Light gray (not significant)
+
+        # Prepare table data with compact metric names
+        for metric in metrics:
+            result = self.stats['comparisons'][metric]
+            bonf = result.get('bonferroni_corrected_p', np.nan)
+            fdr = result.get('fdr_corrected_p', np.nan)
+
+            # Scientific abbreviations for retinal metrics
+            metric_name = metric.replace("_", " ").title()
+            metric_name = (metric_name.replace("Peak Signal To Noise Ratio", "PSNR")
+                        .replace("Structural Similarity Index", "SSIM")
+                        .replace("Contrast Ratio", "Contrast")
+                        .replace("Vessel Clarity Index", "Vessel Clarity")
+                        .replace("Illumination Uniformity", "Illum. Unif.")
+                        .replace("Microaneurysm Visibility", "MA Visibility"))
+
+            # Use English terms for international submission
+            bonf_sig = "YES" if not np.isnan(bonf) and bonf < 0.05 else "NO"
+            fdr_sig = "YES" if not np.isnan(fdr) and fdr < 0.05 else "NO"
+
+            data.append([
+                metric_name,
+                f"{bonf:.3e}" if not np.isnan(bonf) else "N/A",
+                bonf_sig,
+                f"{fdr:.3e}" if not np.isnan(fdr) else "N/A",
+                fdr_sig,
+                get_color(bonf),
+                get_color(fdr)
+            ])
+
+        # Create symmetric dataframe
+        df_vis = pd.DataFrame(data, columns=[
+            "Metric", "Bonf. p", "Sig_Bonf", "FDR p", "Sig_FDR", "BonfColor", "FDRColor"
+        ])
+
+        # Tamanho aumentado da figura
+        fig, ax = plt.subplots(figsize=(14, 8))
+        ax.axis('off')
+
+        # === CRITICAL FIX: Robust column width handling ===
+        num_columns = 5  # Explicitly define expected columns
+        # Ajustado para dar mais espaço para as colunas de significância
+        symmetric_widths = [0.30, 0.18, 0.12, 0.18, 0.12]
+
+        # Validate dimensions before table creation
+        if len(symmetric_widths) != num_columns:
+            symmetric_widths = [0.25] * num_columns  # Safe fallback
+
+        # Adicionando verificação para dados
+        print("Verifying table data:")
+        for row in df_vis[["Metric", "Bonf. p", "Sig_Bonf", "FDR p", "Sig_FDR"]].values:
+            print(row)  # Diagnostic information for console
+
+        # Create table with dimension safeguards
+        try:
+            table = ax.table(
+                cellText=df_vis[["Metric", "Bonf. p", "Sig_Bonf", "FDR p", "Sig_FDR"]].values,
+                colLabels=[
+                    "Ophthalmic Metric",
+                    "Bonferroni p-value",
+                    "Significant",  # Changed to English
+                    "FDR p-value",
+                    "Significant"   # Changed to English
+                ],
+                loc='center',
+                cellLoc='center',
+                colLoc='center',
+                colWidths=symmetric_widths
+            )
+
+            # Increase header row height to accommodate larger text
+            for (i, j), cell in table.get_celld().items():
+                if i == 0:  # Header row
+                    cell.set_height(0.10)  # Increased from 0.08 to 0.10
+        except ValueError as e:
+            print(f"Error creating table: {e}")
+            # Emergency recovery for dimension mismatch
+            table = ax.table(
+                cellText=df_vis.iloc[:, :num_columns].values,
+                colLabels=df_vis.columns[:num_columns],
+                loc='center'
+            )
+
+        # ===== ACADEMIC STYLING =====
+        # 1. Header styling with LARGER FONT SIZE
+        for i in range(5):
+            try:
+                cell = table.get_celld()[(0, i)]
+                # Increased font size for headers (14 pt)
+                cell.set_text_props(weight='bold', color='white', fontsize=14)
+                cell.set_facecolor('#2F5496')  # Academic blue
+            except KeyError:
+                continue  # Skip if cell doesn't exist
+
+        # 2. Significance highlighting
+        for i in range(len(df_vis)):
+            try:
+                # Bonferroni column
+                table.get_celld()[(i+1, 1)].set_facecolor(df_vis.iloc[i]['BonfColor'])
+                # FDR column
+                table.get_celld()[(i+1, 3)].set_facecolor(df_vis.iloc[i]['FDRColor'])
+
+                # Color significance columns based on value
+                bonf_sig = df_vis.iloc[i]['Sig_Bonf']
+                fdr_sig = df_vis.iloc[i]['Sig_FDR']
+
+                if bonf_sig == "YES":
+                    table.get_celld()[(i+1, 2)].set_facecolor('#90EE90')  # light green
+                else:
+                    table.get_celld()[(i+1, 2)].set_facecolor('#FFCCCB')  # light red
+
+                if fdr_sig == "YES":
+                    table.get_celld()[(i+1, 4)].set_facecolor('#90EE90')  # light green
+                else:
+                    table.get_celld()[(i+1, 4)].set_facecolor('#FFCCCB')  # light red
+
+                # Zebra striping for metrics
+                if i % 2 == 0:
+                    table.get_celld()[(i+1, 0)].set_facecolor('#F8F8F8')
+            except (KeyError, IndexError) as e:
+                print(f"Error styling cell [{i}]: {e}")
+                continue
+
+        # 3. Typography refinement - INCREASED FONT SIZE
+        table.auto_set_font_size(False)
+        table.set_fontsize(12)  # Increased from 11 to 12 for cell text
+        table.scale(1, 1.7)     # Improved spacing for taller cells
+
+        # ===== STATISTICAL CONTEXT =====
+        # 1. Significance legend
+        legend_elements = [
+            plt.Rectangle((0,0), 1, 1, color='#006400', label='p ≤ 0.001'),
+            plt.Rectangle((0,0), 1, 1, color='#32CD32', label='p ≤ 0.01'),
+            plt.Rectangle((0,0), 1, 1, color='#FFD700', label='p ≤ 0.05'),
+            plt.Rectangle((0,0), 1, 1, color='#D3D3D3', label='p > 0.05')
+        ]
+
+        ax.legend(
+            handles=legend_elements,
+            loc='lower center',
+            bbox_to_anchor=(0.5, -0.15),
+            ncol=4,
+            frameon=False,
+            title="Significance Level:",
+            title_fontproperties={'weight': 'bold', 'size': 12},  # Increased legend title size
+            fontsize=12  # Increased legend text size
+        )
+
+        # 2. Statistical recommendation (in English)
+        fig.text(
+            0.5, -0.05,
+            "Interpretation recommendation: FDR-corrected values should be prioritized for clinical conclusions",
+            ha='center',
+            fontsize=11,  # Increased from 10 to 11
+            style='italic'
+        )
+
+        # 3. Table title
+        plt.suptitle(
+            "Statistical Significance of Illumination Correction Methods",
+            fontsize=18,  # Increased from 16 to 18
+            fontweight='bold',
+            y=0.98
+        )
+
+        # Save publication-ready figure
+        out_path = self.output_figures_dir / "figure3_statistical_significance_table.png"
+        plt.savefig(out_path, dpi=600, bbox_inches='tight')
+        plt.close()
+
+        return f"Figure 3: Statistical significance table saved to {out_path}"
+
     def generate_all_figures(self):
-        """Generate all academic figures for the paper"""
+        """Generate all academic figures and tables for the paper"""
         print("\n" + "="*60)
-        print("GENERATING ACADEMIC FIGURES")
+        print("GENERATING ACADEMIC FIGURES AND TABLES")
         print("="*60)
 
         results = []
@@ -203,14 +395,14 @@ class AcademicVisualizationGenerator:
             results.append(self.create_figure_2_efficiency_analysis())
             print("✓ Figure 2 completed")
 
-            # Remover ou comentar as linhas abaixo:
-            # results.append(self.create_summary_table_figure())
-            # print("✓ Summary table completed")
+            # CHAMA AGORA O NOVO MÉTODO QUE GERA A TABELA AO INVÉS DO PLOT
+            results.append(self.create_figure_3_p_value_table())
+            print("✓ Figure 3 (Table) completed")
 
-            print(f"\n✓ All figures saved to: {self.output_dir.absolute()}")
+            print(f"\n✓ All figures and tables saved to: {self.output_figures_dir.absolute()} and {self.output_tables_dir.absolute()}")
 
         except Exception as e:
-            print(f"Error generating figures: {e}")
+            print(f"Error generating figures/tables: {e}")
             raise
 
         return results
@@ -219,4 +411,3 @@ if __name__ == "__main__":
     # Ajuste: use "." para data_dir, pois os arquivos estão em subpastas do diretório atual
     generator = AcademicVisualizationGenerator(data_dir=".")
     generator.generate_all_figures()
-
