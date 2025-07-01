@@ -497,24 +497,21 @@ class AcademicVisualizerEnhanced:
     @staticmethod
     def create_enhanced_comparison_grid(results: List[Dict], output_dir: Path) -> Path:
         """Create enhanced visual comparison grid with metrics overlay"""
-        # Select representative images
-        image_ids = list(set(r['image_id'] for r in results))[:3]
+        # Limitar para apenas 1 imagem
+        image_ids = list(set(r['image_id'] for r in results))[:1]  # Apenas a primeira imagem
         methods = ['CLAHE', 'SSR', 'MSR', 'MSRCR']
 
-        fig, axes = plt.subplots(len(image_ids), len(methods) + 1,
-                                figsize=(16, 4 * len(image_ids)))
-
-        if len(image_ids) == 1:
-            axes = axes.reshape(1, -1)
+        # Configurar grid horizontal com 5 imagens (original + 4 métodos)
+        fig, axes = plt.subplots(1, len(methods) + 1, figsize=(20, 4))
 
         for i, image_id in enumerate(image_ids):
             # Original image
             original_result = next((r for r in results
                                   if r['image_id'] == image_id and r['method'] == 'original'), None)
             if original_result and 'image' in original_result:
-                axes[i, 0].imshow(cv2.cvtColor(original_result['image'], cv2.COLOR_BGR2RGB))
-                axes[i, 0].set_title('ORIGINAL' if i == 0 else '', fontsize=16)
-                axes[i, 0].axis('off')
+                axes[0].imshow(cv2.cvtColor(original_result['image'], cv2.COLOR_BGR2RGB))
+                axes[0].set_title('ORIGINAL', fontsize=16)
+                axes[0].axis('off')
 
                 # Salvar imagem original individualmente como PNG
                 original_img = cv2.cvtColor(original_result['image'], cv2.COLOR_BGR2RGB)
@@ -522,7 +519,7 @@ class AcademicVisualizerEnhanced:
                 plt.figure(figsize=(8, 8))
                 plt.imshow(original_img)
                 plt.axis('off')
-                plt.title('ORIGINAL', fontsize=16)
+                plt.title('ORIGINAL', fontsize=32)  # Aumentado para 32
                 plt.tight_layout()
                 plt.savefig(output_dir / img_filename, format='png', dpi=300)
                 plt.close()
@@ -532,7 +529,7 @@ class AcademicVisualizerEnhanced:
                 method_result = next((r for r in results
                                     if r['image_id'] == image_id and r['method'] == method), None)
                 if method_result and 'image' in method_result:
-                    axes[i, j+1].imshow(cv2.cvtColor(method_result['image'], cv2.COLOR_BGR2RGB))
+                    axes[j+1].imshow(cv2.cvtColor(method_result['image'], cv2.COLOR_BGR2RGB))
 
                     # Add metrics as text overlay
                     text = ""
@@ -543,16 +540,16 @@ class AcademicVisualizerEnhanced:
                         else:
                             text = f"CONTRAST: {metrics.get('contrast_ratio', 0):.3f}"
 
-                        # Texto em caixa alta e fonte 16
+                        # Texto em caixa alta e fonte 16 (mantido para o grid)
                         text = text.upper()
-                        axes[i, j+1].text(
-                            0.02, 0.98, text, transform=axes[i, j+1].transAxes,
+                        axes[j+1].text(
+                            0.02, 0.98, text, transform=axes[j+1].transAxes,
                             fontsize=16, verticalalignment='top',
                             bbox=dict(boxstyle='round', facecolor='white', alpha=0.8)
                         )
 
-                    axes[i, j+1].set_title(method.upper() if i == 0 else '', fontsize=16)
-                    axes[i, j+1].axis('off')
+                    axes[j+1].set_title(method.upper(), fontsize=16)
+                    axes[j+1].axis('off')
 
                     # Salvar método individualmente como PNG
                     method_img = cv2.cvtColor(method_result['image'], cv2.COLOR_BGR2RGB)
@@ -560,13 +557,13 @@ class AcademicVisualizerEnhanced:
                     plt.figure(figsize=(8, 8))
                     plt.imshow(method_img)
                     plt.axis('off')
-                    plt.title(method.upper(), fontsize=16)
+                    plt.title(method.upper(), fontsize=32)  # Aumentado para 32
 
                     # Adicionar também as métricas na figura individual
                     if text:
                         plt.text(
                             0.02, 0.98, text, transform=plt.gca().transAxes,
-                            fontsize=16, verticalalignment='top',
+                            fontsize=22, verticalalignment='top',  # Mantido em 22
                             bbox=dict(boxstyle='round', facecolor='white', alpha=0.8)
                         )
 
@@ -574,12 +571,13 @@ class AcademicVisualizerEnhanced:
                     plt.savefig(output_dir / img_filename, format='png', dpi=300)
                     plt.close()
 
-        # Remover o título geral da figura
-        # plt.suptitle('Enhanced Visual Comparison of Illumination Correction Methods', fontsize=16)
+        # Configuração final do grid
         plt.tight_layout()
-
         output_path = output_dir / 'enhanced_comparison_grid.pdf'
         plt.savefig(output_path, format='pdf')
+
+        # Salvar também como PNG para fácil visualização
+        plt.savefig(output_dir / 'enhanced_comparison_grid.png', format='png', dpi=300)
         plt.close()
 
         return output_path

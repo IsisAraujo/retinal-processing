@@ -1,8 +1,0 @@
-Metric,Test,Statistic,P_Value,Bonferroni_P,FDR_P,Significant_Bonferroni,Significant_FDR,Effect_Size,Effect_Interpretation,Statistical_Power
-Psnr,One-way ANOVA,240.245,0.0000,0.0000,0.0000,Yes,Yes,13.624,Large,1.000
-Ssim,One-way ANOVA,110.071,0.0000,0.0000,0.0000,Yes,Yes,13.435,Large,1.000
-Contrast Ratio,One-way ANOVA,413.911,0.0000,0.0000,0.0000,Yes,Yes,20.059,Large,1.000
-Vessel Clarity Index,One-way ANOVA,52.889,0.0000,0.0001,0.0000,Yes,Yes,5.856,Large,nan
-Illumination Uniformity,Kruskal-Wallis H-test,9.462,0.0237,0.1662,0.0237,No,Yes,-11.574,Large,1.000
-Edge Preservation Index,One-way ANOVA,125.225,0.0000,0.0000,0.0000,Yes,Yes,10.266,Large,nan
-Microaneurysm Visibility,One-way ANOVA,120.803,0.0000,0.0000,0.0000,Yes,Yes,-28.105,Large,1.000
